@@ -6,146 +6,35 @@
   <title>Waheed Qasmi – Arabic Calligrapher</title>
   <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --gold: #bfa050;
-      --dark: #111;
-      --light: #fdfaf6;
-      --white: #ffffff;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      margin: 0;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    header {
-      background-color: var(--dark);
-      color: #fff;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    header h1 { 
-      font-family: 'Scheherazade New', serif; 
-      font-size: 4.5em; 
-      margin: 0; 
-      color: var(--gold);
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(17, 17, 17, 0.98);
-      padding: 15px 0;
-      z-index: 1000;
-      text-align: center;
-      border-bottom: 1px solid var(--gold);
-    }
-    nav a {
-      margin: 0 15px;
-      font-weight: 600;
-      color: var(--gold);
-      text-transform: uppercase;
-      font-size: 0.85em;
-      letter-spacing: 2px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+    :root { --gold: #bfa050; --dark: #111; --light: #fdfaf6; }
+    body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: var(--dark); margin: 0; line-height: 1.6; scroll-behavior: smooth; }
+    header { background-color: var(--dark); color: #fff; padding: 80px 20px; text-align: center; }
+    header h1 { font-family: 'Scheherazade New', serif; font-size: 4.5em; margin: 0; color: var(--gold); }
+    nav { position: sticky; top: 0; background: rgba(17, 17, 17, 0.98); padding: 15px 0; z-index: 1000; text-align: center; border-bottom: 1px solid var(--gold); }
+    nav a { margin: 0 15px; font-weight: 600; color: var(--gold); text-transform: uppercase; font-size: 0.85em; letter-spacing: 2px; text-decoration: none; transition: 0.3s; }
     nav a:hover { color: #fff; }
+    .section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+    .section h2 { text-align: center; font-size: 2.5em; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
+    .section h2::after { content: ''; display: block; width: 50px; height: 2px; background: var(--gold); margin: 15px auto; }
+    
+    /* Gallery Styles */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 400px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+    .gallery-item:hover img { transform: scale(1.1); }
 
-    .section { padding: 100px 20px; max-width: 1200px; margin: auto; }
-    .section h2 {
-      text-align: center;
-      color: var(--dark);
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      position: relative;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-    .section h2::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 2px;
-      background: var(--gold);
-      margin: 15px auto;
-    }
-
-    /* --- New Gallery Styles --- */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      height: 350px;
-      background-color: #eee;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      display: block;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-    /* Feature the wide/detailed pieces */
-    .gallery-item.large {
-      grid-column: span 1;
-    }
-
-    /* --- Services Styles --- */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .service-box {
-      background: var(--white);
-      border: 1px solid #eee;
-      padding: 50px 30px;
-      text-align: center;
-      transition: 0.3s;
-      border-radius: 8px;
-    }
-    .service-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-      border-color: var(--gold);
-    }
-
-    .btn-contact {
-      display: inline-block;
-      background: var(--gold);
-      color: #fff;
-      padding: 15px 40px;
-      border-radius: 50px;
-      margin-top: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn-contact:hover {
-      background: #a38944;
-      transform: scale(1.05);
-    }
-
-    footer { background: var(--dark); color: #888; padding: 60px 20px; text-align: center; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .service-box { background: #fff; border: 1px solid #eee; padding: 40px; text-align: center; border-radius: 8px; transition: 0.3s; }
+    .service-box:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.05); border-color: var(--gold); }
+    .btn-contact { display: inline-block; background: var(--gold); color: #fff; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+    footer { background: var(--dark); color: #888; padding: 40px; text-align: center; }
   </style>
 </head>
 <body>
 
 <header id="home">
   <h1>Waheed Qasmi</h1>
-  <p style="letter-spacing: 3px; font-weight: 300;">MASTER OF ARABIC CALLIGRAPHY</p>
+  <p style="letter-spacing: 3px;">MASTER OF ARABIC CALLIGRAPHY</p>
 </header>
 
 <nav>
@@ -157,34 +46,20 @@
 
 <section class="section" id="about">
   <h2>The Artist</h2>
-  <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.2em; color: #555;">
-    With over 15 years of dedication to the pen, Waheed Qasmi transforms sacred script into timeless visual art. 
-    By blending traditional precision with contemporary aesthetic, his work captures the spiritual essence of Arabic calligraphy.
+  <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.2em;">
+    With over 15 years of dedication, Waheed Qasmi transforms sacred script into timeless visual art, 
+    blending traditional precision with contemporary aesthetic.
   </p>
 </section>
 
 <section class="section" id="portfolio">
   <h2>The Work</h2>
   <div class="gallery-grid">
-    <div class="gallery-item">
-      <img src="1000005933.jpg" alt="Calligraphy Detail 1">
-    </div>
-    <div class="gallery-item">
-      <img src="1000005943.webp" alt="Framed Arabic Art">
-    </div>
-    <div class="gallery-item">
-      <img src="1000005955.jpg" alt="Waheed Qasmi working">
-    </div>
-    <div class="gallery-item">
-      <img src="1000006000.jpg" alt="Calligraphy process detail">
-    </div>
+    <div class="gallery-item"><img src="INSERT_LINK_1_HERE" alt="Calligraphy Detail"></div>
+    <div class="gallery-item"><img src="INSERT_LINK_2_HERE" alt="Framed Art"></div>
+    <div class="gallery-item"><img src="INSERT_LINK_3_HERE" alt="Artist at Work"></div>
+    <div class="gallery-item"><img src="INSERT_LINK_4_HERE" alt="Process Detail"></div>
   </div>
-
-  <div style="max-width: 600px; margin: 50px auto 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-    <p style="text-align: center; margin-bottom: 15px; font-size: 0.9em; color: #888;">Follow the journey on Instagram</p>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/qasmiwaheed/" data-instgrm-version="14"></blockquote>
-  </div>
-  <script async src="//www.instagram.com/embed.js"></script>
 </section>
 
 <section class="section" id="services">
@@ -192,19 +67,18 @@
   <div class="services-grid">
     <div class="service-box">
       <h3 style="color: var(--gold);">Custom Commissions</h3>
-      <p>Bespoke artwork for private collections, homes, and offices, tailored to your chosen text and space.</p>
+      <p>Bespoke artwork for private collections, homes, and offices.</p>
     </div>
     <div class="service-box">
       <h3 style="color: var(--gold);">Logos & Branding</h3>
-      <p>Distinctive Arabic identity design for luxury brands, corporate entities, and personal signatures.</p>
+      <p>Distinctive Arabic identity design for luxury brands and signatures.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="contact" style="text-align: center; background-color: #f4f1ec;">
+<section class="section" id="contact" style="text-align: center;">
   <h2>Get in Touch</h2>
-  <p>Available for global commissions, architectural collaborations, and exhibitions.</p>
-  <p><strong>Doha, Qatar</strong></p>
+  <p>Doha, Qatar</p>
   <a href="https://wa.me/97466531911" class="btn-contact">Message on WhatsApp</a>
 </section>
 
