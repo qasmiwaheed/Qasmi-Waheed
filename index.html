@@ -10,79 +10,129 @@
       --gold: #bfa050;
       --dark: #111;
       --light: #fdfaf6;
+      --white: #ffffff;
+      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
+
+    * { box-sizing: border-box; }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--light);
       color: var(--dark);
       margin: 0;
       line-height: 1.6;
-      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
+
+    /* --- Enhanced Header --- */
     header {
       background-color: var(--dark);
       color: #fff;
-      padding: 60px 20px;
+      padding: 120px 20px;
       text-align: center;
+      transition: var(--transition);
     }
     header h1 { 
       font-family: 'Scheherazade New', serif; 
-      font-size: 4em; 
+      font-size: clamp(3em, 8vw, 5em); 
       margin: 0; 
       color: var(--gold);
     }
+
+    /* --- Sticky Nav with Scroll Effect --- */
     nav {
       position: sticky;
       top: 0;
       background: rgba(17, 17, 17, 0.95);
-      padding: 15px 0;
+      padding: 20px 0;
       z-index: 1000;
       text-align: center;
+      border-bottom: 1px solid var(--gold);
+      transition: var(--transition);
+    }
+    nav.scrolled {
+      padding: 10px 0;
+      background: var(--dark);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     }
     nav a {
       margin: 0 15px;
       font-weight: 600;
       color: var(--gold);
       text-transform: uppercase;
-      font-size: 0.9em;
-      letter-spacing: 1px;
+      font-size: 0.75em;
+      letter-spacing: 2px;
+      text-decoration: none;
       transition: 0.3s;
     }
     nav a:hover { color: #fff; }
 
-    .section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+    /* --- Reveal Animation --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section { padding: 80px 20px; max-width: 1200px; margin: auto; }
     .section h2 {
       text-align: center;
       color: var(--dark);
-      font-size: 2.5em;
+      font-size: 2em;
       margin-bottom: 40px;
-      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 4px;
     }
     .section h2::after {
       content: '';
       display: block;
-      width: 60px;
-      height: 3px;
+      width: 40px;
+      height: 2px;
       background: var(--gold);
-      margin: 10px auto;
+      margin: 15px auto;
     }
 
+    /* --- Gallery --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      height: 400px;
+      background-color: #ddd;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    /* --- Services --- */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      justify-content: center;
+      gap: 20px;
     }
     .service-box {
-      background: #fff;
-      border: 1px solid #eee;
-      padding: 40px 20px;
+      background: var(--white);
+      padding: 40px;
       text-align: center;
-      transition: transform 0.3s;
-      border-radius: 8px;
+      border: 1px solid #eee;
+      transition: var(--transition);
     }
     .service-box:hover {
-      transform: translateY(-10px);
+      border-color: var(--gold);
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
@@ -90,70 +140,106 @@
       display: inline-block;
       background: var(--gold);
       color: #fff;
-      padding: 12px 30px;
-      border-radius: 50px;
+      padding: 16px 45px;
+      border-radius: 0; /* Square edges look more artistic/modern */
       margin-top: 20px;
-      font-weight: bold;
+      font-weight: 600;
       text-decoration: none;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+    .btn-contact:hover {
+      background: var(--dark);
+      color: var(--gold);
     }
 
-    footer { background: var(--dark); color: #777; padding: 40px; text-align: center; }
+    footer { background: var(--dark); color: #666; padding: 40px 20px; text-align: center; font-size: 0.8em; }
   </style>
 </head>
 <body>
 
 <header id="home">
-  <h1>Waheed Qasmi</h1>
-  <p>Master of Arabic Calligraphy</p>
+  <div class="reveal active">
+    <h1>Waheed Qasmi</h1>
+    <p style="letter-spacing: 5px; font-weight: 300; font-size: 0.9em;">TRADITIONAL ARABIC CALLIGRAPHY</p>
+  </div>
 </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#portfolio">Portfolio</a>
+<nav id="navbar">
+  <a href="#about">The Artist</a>
+  <a href="#portfolio">Works</a>
   <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+  <a href="#contact">Inquiry</a>
 </nav>
 
-<section class="section" id="about">
-  <h2>The Artist</h2>
-  <p style="text-align: center; max-width: 700px; margin: auto; font-size: 1.1em;">
-    With over 15 years of mastery, Waheed Qasmi transforms sacred script into timeless visual art. 
-    Specializing in traditional and contemporary styles, his work resonates with elegance and spiritual depth.
+<section class="section reveal" id="about">
+  <h2>Heritage & Craft</h2>
+  <p style="text-align: center; max-width: 750px; margin: auto; font-size: 1.1em; color: #444; font-weight: 300;">
+    Based in Doha, Waheed Qasmi is a master of the reed pen. With over 15 years of experience, he specializes in bringing the spiritual depth of classical scripts into the modern architectural and private space.
   </p>
 </section>
 
-<section class="section" id="portfolio">
+<section class="section reveal" id="portfolio">
   <h2>Portfolio</h2>
-  <div style="max-width: 540px; margin: auto; border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/qasmiwaheed/" data-instgrm-version="14"></blockquote>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="1000005933.jpg" alt="Calligraphy Art"></div>
+    <div class="gallery-item"><img src="1000005943.webp" alt="Calligraphy Art"></div>
+    <div class="gallery-item"><img src="1000005955.jpg" alt="Calligraphy Art"></div>
+    <div class="gallery-item"><img src="1000006000.jpg" alt="Calligraphy Art"></div>
   </div>
-  <script async src="//www.instagram.com/embed.js"></script>
 </section>
 
-<section class="section" id="services">
-  <h2>Services</h2>
+<section class="section reveal" id="services">
+  <h2>Expertise</h2>
   <div class="services-grid">
     <div class="service-box">
-      <h3>Custom Commissions</h3>
-      <p>Personalized artwork for homes and offices, tailored to your space and specific vision.</p>
+      <h3 style="color: var(--gold); font-weight: 400;">Architectural Scripts</h3>
+      <p>Custom calligraphic installations for mosques, majlis, and commercial interiors.</p>
     </div>
     <div class="service-box">
-      <h3>Logos & Branding</h3>
-      <p>Elegant Arabic identity design for brands, businesses, and distinctive personal branding.</p>
+      <h3 style="color: var(--gold); font-weight: 400;">Fine Art Commissions</h3>
+      <p>One-of-a-kind hand-painted canvases using traditional inks and gold leaf.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="contact" style="text-align: center;">
-  <h2>Get in Touch</h2>
-  <p>Available for global commissions and exhibitions.</p>
-  <p><strong>Location:</strong> Doha, Qatar</p>
-  <a href="https://wa.me/97466531911" class="btn-contact">Message on WhatsApp</a>
+<section class="section reveal" id="contact" style="text-align: center; background-color: #f0ede8; max-width: 100%;">
+  <h2>Collaborate</h2>
+  <p>Currently accepting commissions worldwide.</p>
+  <p style="margin-bottom: 30px;"><strong>Doha, Qatar</strong></p>
+  <a href="https://wa.me/97466531911" class="btn-contact">WHATSAPP INQUIRY</a>
 </section>
 
 <footer>
-  <p>© 2026 Waheed Qasmi. Preserving the beauty of the pen.</p>
+  <p>© 2026 WAHEED QASMI | ALL RIGHTS RESERVED</p>
 </footer>
+
+<script>
+  // Navbar Scroll Effect
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 100) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // Reveal Sections on Scroll
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", reveal);
+</script>
 
 </body>
 </html>
