@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,127 +6,71 @@
   <title>Waheed Qasmi – Arabic Calligrapher</title>
   <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --gold: #bfa050;
-      --dark: #111;
-      --light: #fdfaf6;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      margin: 0;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    header {
-      background-color: var(--dark);
-      color: #fff;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    header h1 { 
-      font-family: 'Scheherazade New', serif; 
-      font-size: 4em; 
+    :root { --gold: #bfa050; --dark: #111; --light: #fdfaf6; }
+    
+    /* GLOBAL RESET & SHARPENING */
+    * { box-sizing: border-box; }
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      background-color: var(--light); 
+      color: var(--dark); 
       margin: 0; 
-      color: var(--gold);
+      line-height: 1.6; 
+      scroll-behavior: smooth; 
     }
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(17, 17, 17, 0.98);
-      padding: 15px 0;
-      z-index: 1000;
-      text-align: center;
-      border-bottom: 1px solid var(--gold);
-    }
-    nav a {
-      margin: 0 15px;
-      font-weight: 600;
-      color: var(--gold);
-      text-transform: uppercase;
-      font-size: 0.85em;
-      letter-spacing: 2px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    nav a:hover { color: #fff; }
 
-    .section { padding: 80px 20px; max-width: 1100px; margin: auto; }
-    .section h2 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      position: relative;
-    }
-    .section h2::after {
-      content: '';
+    /* CSS TO PREVENT BLURRY IMAGES ON MOBILE */
+    img {
+      max-width: 100%;
+      height: auto;
       display: block;
-      width: 50px;
-      height: 2px;
-      background: var(--gold);
-      margin: 15px auto;
+      /* Forces high-contrast sharp edges for high-DPI screens */
+      image-rendering: -webkit-optimize-contrast; 
+      image-rendering: crisp-edges;
     }
 
-    /* Stylish Gallery Grid */
+    header { background-color: var(--dark); color: #fff; padding: 80px 20px; text-align: center; }
+    header h1 { font-family: 'Scheherazade New', serif; font-size: clamp(2.5em, 8vw, 4.5em); margin: 0; color: var(--gold); }
+    
+    nav { 
+      position: sticky; top: 0; background: rgba(17, 17, 17, 0.98); 
+      padding: 15px 0; z-index: 1000; text-align: center; 
+      border-bottom: 1px solid var(--gold); 
+    }
+    nav a { margin: 0 15px; font-weight: 600; color: var(--gold); text-transform: uppercase; font-size: 0.85em; letter-spacing: 2px; text-decoration: none; }
+
+    .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+    .section h2 { text-align: center; font-size: 2.5em; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
+    .section h2::after { content: ''; display: block; width: 50px; height: 2px; background: var(--gold); margin: 15px auto; }
+
+    /* HIGH-RESOLUTION GALLERY GRID */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
     .gallery-item {
       position: relative;
       overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      height: 400px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background: #eee;
+      /* Set a fixed aspect ratio to keep grid clean */
+      aspect-ratio: 4 / 5; 
     }
-    /* Making the main piece wider */
-    .featured {
-      grid-column: span 2;
-    }
-    @media (max-width: 768px) {
-      .featured { grid-column: span 1; }
-    }
-
     .gallery-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
+      object-fit: cover; /* Ensures image fills space without stretching */
+      transition: transform 0.5s ease;
     }
-    .gallery-item:hover img {
-      transform: scale(1.08);
-    }
+    .gallery-item:hover img { transform: scale(1.05); }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .service-box {
-      background: #fff;
-      border: 1px solid #eee;
-      padding: 40px;
-      text-align: center;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    .service-box:hover {
-      transform: translateY(-10px);
-      border-color: var(--gold);
-    }
-
-    .btn-contact {
-      display: inline-block;
-      background: var(--gold);
-      color: #fff;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-    }
+    /* SERVICES & CONTACT */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .service-box { background: #fff; border: 1px solid #eee; padding: 40px; text-align: center; border-radius: 8px; }
+    .btn-contact { display: inline-block; background: var(--gold); color: #fff; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+    
     footer { background: var(--dark); color: #888; padding: 40px; text-align: center; }
   </style>
 </head>
@@ -147,27 +90,19 @@
 
 <section class="section" id="about">
   <h2>The Artist</h2>
-  <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.2em;">
-    With over 15 years of mastery, Waheed Qasmi transforms sacred script into timeless visual art. 
-    Blending traditional precision with contemporary soul, his work preserves the ancient beauty of the pen.
+  <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1em; color: #444;">
+    With over 15 years of dedication, Waheed Qasmi transforms sacred script into timeless visual art. 
+    Specializing in traditional and contemporary styles, his work captures the profound elegance of the Arabic language.
   </p>
 </section>
 
 <section class="section" id="portfolio">
   <h2>The Work</h2>
   <div class="gallery-grid">
-    <div class="gallery-item featured">
-      <img src="https://i.ibb.co/bgMRsf4j/1000005943.jpg" alt="Arabic Calligraphy Framed Piece">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/v6BCKC4x/1000005955.jpg" alt="Waheed Qasmi Working">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/wr0wv08V/1000005933.jpg" alt="Calligraphy Detail">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/MxC6pCC2/1000006000.jpg" alt="Process Close-up">
-    </div>
+    <div class="gallery-item"><img src="https://i.ibb.co/bgMRsf4j/1000005943.jpg" alt="Framed Arabic Art"></div>
+    <div class="gallery-item"><img src="https://i.ibb.co/v6BCKC4x/1000005955.jpg" alt="Waheed Qasmi Working"></div>
+    <div class="gallery-item"><img src="https://i.ibb.co/wr0wv08V/1000005933.jpg" alt="Calligraphy Detail"></div>
+    <div class="gallery-item"><img src="https://i.ibb.co/MxC6pCC2/1000006000.jpg" alt="Process Close-up"></div>
   </div>
 </section>
 
@@ -176,18 +111,17 @@
   <div class="services-grid">
     <div class="service-box">
       <h3 style="color: var(--gold);">Custom Commissions</h3>
-      <p>Personalized artwork for homes and offices, tailored to your space and vision.</p>
+      <p>Personalized artwork for private collections, homes, and offices.</p>
     </div>
     <div class="service-box">
       <h3 style="color: var(--gold);">Logos & Branding</h3>
-      <p>Elegant Arabic identity design for luxury brands and distinctive personal branding.</p>
+      <p>Distinctive Arabic identity design for luxury brands and signatures.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="contact" style="text-align: center;">
   <h2>Get in Touch</h2>
-  <p>Available for global commissions and exhibitions.</p>
   <p><strong>Doha, Qatar</strong></p>
   <a href="https://wa.me/97466531911" class="btn-contact">Message on WhatsApp</a>
 </section>
