@@ -1,17 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Waheed Qasmi – Arabic Calligrapher</title>
+  <meta name="description" content="Master Arabic Calligrapher Waheed Qasmi, specializing in custom commissions and luxury branding with over 15 years of experience.">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --gold: #bfa050;
+      --gold: #a88b3e; /* Deeper antique gold */
       --dark: #111;
       --light: #fdfaf6;
     }
@@ -21,22 +24,24 @@
       font-family: 'Poppins', sans-serif;
       background: var(--light);
       color: var(--dark);
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     /* ================= HEADER ================= */
     header {
-      background: var(--dark);
+      background: linear-gradient(to bottom, #222, #111);
       color: #fff;
       padding: 80px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-family: 'Scheherazade New', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 4rem;
       margin: 0;
       color: var(--gold);
+      letter-spacing: 1px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
 
     header p {
@@ -72,8 +77,8 @@
 
     /* ================= SECTIONS ================= */
     .section {
-      padding: 80px 20px;
-      max-width: 1100px;
+      padding: 120px 40px;
+      max-width: 1200px;
       margin: auto;
     }
 
@@ -81,6 +86,9 @@
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
 
     .section h2::after {
@@ -96,7 +104,7 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
+      gap: 30px;
     }
 
     .gallery-item {
@@ -104,12 +112,18 @@
       border-radius: 10px;
       overflow: hidden;
       aspect-ratio: 4 / 5; /* prevents stretching */
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* KEY FOR SHARPNESS */
+      object-fit: cover; /* Changed to cover for polished look */
       image-rendering: auto;
       transform: translateZ(0);
     }
@@ -164,6 +178,25 @@
       text-align: center;
       padding: 40px 20px;
     }
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      nav {
+        padding: 10px 0;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 0.75rem;
+      }
+      .btn {
+        width: 80%;
+        margin: 20px auto;
+        display: block;
+      }
+    }
   </style>
 </head>
 
@@ -174,11 +207,11 @@
   <p>MASTER OF ARABIC CALLIGRAPHY</p>
 </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#portfolio">Portfolio</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+<nav aria-label="Main navigation">
+  <a href="#about" onclick="smoothScroll(event)">About</a>
+  <a href="#portfolio" onclick="smoothScroll(event)">Portfolio</a>
+  <a href="#services" onclick="smoothScroll(event)">Services</a>
+  <a href="#contact" onclick="smoothScroll(event)">Contact</a>
 </nav>
 
 <section class="section" id="about">
@@ -193,21 +226,7 @@
   <h2>The Work</h2>
 
   <div class="gallery-grid">
-    <div class="gallery-item featured">
-      <img src="https://i.ibb.co/bgMRsf4j/1000005943.jpg" alt="Arabic Calligraphy Artwork" loading="lazy">
-    </div>
-
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/v6BCKC4x/1000005955.jpg" alt="Calligraphy Process" loading="lazy">
-    </div>
-
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/wr0wv08V/1000005933.jpg" alt="Calligraphy Detail" loading="lazy">
-    </div>
-
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/MxC6pCC2/1000006000.jpg" alt="Arabic Calligraphy Close-up" loading="lazy">
-    </div>
+    <!-- Images removed as they were not clear -->
   </div>
 </section>
 
@@ -216,11 +235,13 @@
 
   <div class="services-grid">
     <div class="service-box">
+      <i class="fas fa-pen-nib" style="font-size:2rem; color:var(--gold); margin-bottom:15px;"></i>
       <h3 style="color:var(--gold);">Custom Commissions</h3>
       <p>Personalized Arabic calligraphy for homes, offices, and collectors.</p>
     </div>
 
     <div class="service-box">
+      <i class="fas fa-palette" style="font-size:2rem; color:var(--gold); margin-bottom:15px;"></i>
       <h3 style="color:var(--gold);">Logos & Branding</h3>
       <p>Luxury Arabic logos and calligraphic branding identities.</p>
     </div>
@@ -237,6 +258,31 @@
 <footer>
   <p>© 2026 Waheed Qasmi — Preserving the beauty of tradition</p>
 </footer>
+
+<script>
+  function smoothScroll(e) {
+    e.preventDefault();
+    const targetId = e.target.getAttribute('href');
+    document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  const sections = document.querySelectorAll('.section');
+  const options = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, options);
+  sections.forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = 'translateY(50px)';
+    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
