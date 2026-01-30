@@ -70,8 +70,9 @@
     /* Improved Grid for Services */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-content: center;
     }
     .service-box {
       background: #fff;
@@ -94,6 +95,7 @@
       border-radius: 50px;
       margin-top: 20px;
       font-weight: bold;
+      text-decoration: none;
     }
 
     footer { background: var(--dark); color: #777; padding: 40px; text-align: center; }
@@ -132,9 +134,14 @@
 <section class="section" id="services">
   <h2>Services</h2>
   <div class="services-grid">
-    <div class="service-box"><h3>Custom Commissions</h3><p>Personalized artwork for homes and offices.</p></div>
-    <div class="service-box"><h3>Logos & Branding</h3><p>Elegant Arabic identity design for brands.</p></div>
-    <div class="service-box"><h3>Event Calligraphy</h3><p>Live calligraphy for weddings and corporate events.</p></div>
+    <div class="service-box">
+      <h3>Custom Commissions</h3>
+      <p>Personalized artwork for homes and offices, tailored to your space and specific vision.</p>
+    </div>
+    <div class="service-box">
+      <h3>Logos & Branding</h3>
+      <p>Elegant Arabic identity design for brands, businesses, and distinctive personal branding.</p>
+    </div>
   </div>
 </section>
 
