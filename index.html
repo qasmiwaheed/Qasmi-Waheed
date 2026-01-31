@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Waheed Qasmi – Master Arabic Calligrapher</title>
-  <meta name="description" content="Master Arabic Calligrapher Waheed Qasmi, specializing in custom commissions and luxury branding in Doha, Qatar.">
+  <meta name="description" content="Maulana Waheed Qasmi, graduate of Darul Uloom Deoband and Master Calligrapher with 15+ years of experience.">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --gold: #c5a059; /* Brightened antique gold */
+      --gold: #c5a059; 
       --dark: #0f0f0f;
       --light: #fdfaf6;
-      --overlay: rgba(0, 0, 0, 0.7);
+      --overlay: rgba(0, 0, 0, 0.75);
     }
 
     * { box-sizing: border-box; }
@@ -44,7 +44,7 @@
     header {
       height: 100vh;
       background: linear-gradient(var(--overlay), var(--overlay)), 
-                  url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=2000'); /* Professional placeholder */
+                  url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=2000');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -59,172 +59,162 @@
 
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-size: clamp(2.5rem, 7vw, 5rem);
       margin: 0;
       color: var(--gold);
-      letter-spacing: 12px;
+      letter-spacing: 10px;
       text-transform: uppercase;
       font-weight: 400;
     }
 
     header p {
-      letter-spacing: 5px;
+      letter-spacing: 4px;
       font-weight: 200;
-      font-size: 1.1rem;
-      margin-top: 20px;
+      font-size: 1rem;
+      margin-top: 15px;
       text-transform: uppercase;
+      opacity: 0.9;
     }
 
     /* ================= NAV ================= */
     nav {
       position: sticky;
       top: 0;
-      background: rgba(15, 15, 15, 0.95);
-      padding: 20px 0;
+      background: rgba(15, 15, 15, 0.98);
+      padding: 18px 0;
       text-align: center;
-      border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+      border-bottom: 1px solid var(--gold);
       z-index: 1000;
-      backdrop-filter: blur(10px);
     }
 
     nav a {
-      margin: 0 20px;
+      margin: 0 18px;
       color: #fff;
       text-decoration: none;
       font-size: 0.75rem;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       font-weight: 400;
       text-transform: uppercase;
       transition: 0.4s;
-      opacity: 0.8;
     }
 
-    nav a:hover {
-      color: var(--gold);
-      opacity: 1;
-    }
+    nav a:hover { color: var(--gold); }
 
     /* ================= SECTIONS ================= */
     .section {
-      padding: 120px 20px;
+      padding: 100px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
     .section h2 {
       text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 50px;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
       font-family: 'Playfair Display', serif;
       font-weight: 400;
+      letter-spacing: 2px;
     }
 
-    .section h2::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 1px;
-      background: var(--gold);
-      margin: 20px auto 0;
+    /* ================= ABOUT SECTION ================= */
+    .about-card {
+        background: white;
+        padding: 60px 40px;
+        border-radius: 4px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+        text-align: center;
+        border-top: 4px solid var(--gold);
     }
 
-    /* ================= ABOUT / SIGNATURE ================= */
-    .about-content {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
+    .about-card h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
 
     .signature {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: var(--gold);
-      margin-top: 30px;
+      margin-top: 25px;
       display: block;
+    }
+
+    /* ================= TEACHING SECTION ================= */
+    .teaching-box {
+        background: #111;
+        color: #fff;
+        padding: 60px;
+        border-radius: 4px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .teaching-content { flex: 1.5; min-width: 300px; }
+    .teaching-content h2 { text-align: left; color: var(--gold); margin-bottom: 20px; }
+    .teaching-content h2::after { display: none; }
+
+    .step-list { list-style: none; padding: 0; }
+    .step-list li { 
+        margin-bottom: 20px; 
+        padding-left: 30px; 
+        position: relative; 
+        font-weight: 300;
+    }
+    .step-list li::before {
+        content: "\f040"; 
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: var(--gold);
     }
 
     /* ================= WORK GRID ================= */
     .work-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
     }
 
     .insta-card {
-      background: #fff;
       border-radius: 4px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: transform 0.4s ease;
-    }
-    
-    .insta-card:hover {
-        transform: translateY(-10px);
-    }
-
-    /* ================= SERVICES ================= */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-    }
-
-    .service-box {
       background: #fff;
-      padding: 60px 40px;
-      border-radius: 4px;
-      text-align: center;
-      border: 1px solid rgba(0,0,0,0.03);
-      transition: 0.4s;
     }
 
-    .service-box:hover {
-      border-color: var(--gold);
-      background: #fffcf7;
-    }
-
-    .service-box i {
-      font-size: 2.5rem;
-      color: var(--gold);
-      margin-bottom: 25px;
-      display: block;
-    }
-
-    /* ================= CTA BUTTON ================= */
+    /* ================= BUTTONS ================= */
     .btn {
       display: inline-block;
       border: 1px solid var(--gold);
       color: var(--gold);
-      padding: 18px 45px;
+      padding: 16px 40px;
       text-decoration: none;
       font-weight: 400;
       letter-spacing: 2px;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       transition: 0.4s;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
-    .btn:hover {
-      background: var(--gold);
-      color: #fff;
-    }
+    .btn:hover { background: var(--gold); color: #fff; }
 
     /* ================= FOOTER ================= */
     footer {
       background: var(--dark);
-      color: #666;
+      color: #777;
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 20px;
       font-size: 0.8rem;
-      letter-spacing: 1px;
     }
 
     @media (max-width: 768px) {
-      header h1 { font-size: 2.8rem; letter-spacing: 6px; }
-      .section { padding: 80px 20px; }
+      .teaching-box { padding: 30px; }
+      header h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
@@ -234,104 +224,78 @@
 <header id="home">
   <div class="reveal active">
     <h1>Waheed Qasmi</h1>
-    <p>The Art of Arabic Calligraphy</p>
+    <p>Maulana & Master Calligrapher</p>
   </div>
 </header>
 
 <nav>
-  <a href="#about">The Artist</a>
+  <a href="#about">About</a>
   <a href="#work">Portfolio</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Inquiries</a>
+  <a href="#teaching">Learning</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section class="section reveal" id="about">
-  <div class="about-content">
-    <h2>Preserving Tradition</h2>
-    <p style="font-size:1.2rem; font-weight: 300;">
-        With over 15 years of mastery, Waheed Qasmi breathes life into sacred scripts, 
-        blending the discipline of classical Ottoman and Persian styles with the 
-        minimalist demands of modern luxury branding.
+  <div class="about-card">
+    <h3>Maulana Waheed Qasmi</h3>
+    <p style="font-size:1.1rem; max-width: 800px; margin: auto;">
+        A distinguished <strong>Maulana and graduate of Darul Uloom Deoband, India</strong>, 
+        Waheed Qasmi brings a unique blend of spiritual scholarship and artistic mastery to the world of Arabic script. 
+        With over <strong>15 years of professional experience</strong>, his work is characterized by 
+        precision, devotion, and a deep respect for the classical rules of calligraphy.
     </p>
     <span class="signature">Waheed Qasmi</span>
   </div>
 </section>
 
-<section class="section" id="work" style="background-color: #f9f7f2; max-width: 100%;">
-  <div style="max-width: 1200px; margin: auto;">
-    <h2 class="reveal">Gallery Selection</h2>
+<section class="section reveal" id="teaching">
+    <div class="teaching-box">
+        <div class="teaching-content">
+            <h2>Calligraphy Education</h2>
+            <p style="opacity: 0.8;">Learn the sacred art of the pen under the guidance of a master. Courses are designed to take students through a complete journey of discipline and beauty.</p>
+            <ul class="step-list">
+                <li><strong>Basic Level:</strong> Understanding the anatomy of letters and the 'Nuqta' system.</li>
+                <li><strong>Intermediate Level:</strong> Mastering complex connections and flow.</li>
+                <li><strong>Advanced Level:</strong> Creating professional-grade compositions and artistic layouts.</li>
+            </ul>
+            <a href="https://wa.me/97466531911" class="btn" style="color:#fff; border-color:#fff;">Inquire for Classes</a>
+        </div>
+        <div style="flex: 1; text-align: center;">
+             <i class="fas fa-pen-fancy" style="font-size: 6rem; color: var(--gold);"></i>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="work" style="background-color: #f4f1ea; max-width: 100%;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h2 class="reveal">Selected Portfolio</h2>
     <div class="work-container reveal">
-      <div class="insta-card">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYTUb7tPO9w/" data-instgrm-version="14" style="width:100%;"></blockquote>
-      </div>
-      <div class="insta-card">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CbDERTQv6LH/" data-instgrm-version="14" style="width:100%;"></blockquote>
-      </div>
-      <div class="insta-card">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYUoJvQB05A/" data-instgrm-version="14" style="width:100%;"></blockquote>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:50px;" class="reveal">
-        <a href="https://www.instagram.com/qasmiwaheed/" target="_blank" style="color:var(--gold); text-decoration:none; font-size: 0.9rem; letter-spacing: 2px;">
-            EXPLORE FULL ARCHIVE <i class="fab fa-instagram"></i>
-        </a>
+      <div class="insta-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYTUb7tPO9w/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+      <div class="insta-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CbDERTQv6LH/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+      <div class="insta-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYUoJvQB05A/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
     </div>
   </div>
 </section>
 
-<section class="section reveal" id="services">
-  <h2>Our Expertise</h2>
-  <div class="services-grid">
-    <div class="service-box">
-      <i class="fas fa-pen-nib"></i>
-      <h3>Fine Art Commissions</h3>
-      <p>Original hand-painted masterpieces using traditional inks and hand-prepped ahar paper.</p>
-    </div>
-
-    <div class="service-box">
-      <i class="fas fa-gem"></i>
-      <h3>Luxury Branding</h3>
-      <p>Exclusive calligraphic logos for high-end brands, hotels, and corporate identities.</p>
-    </div>
-
-    <div class="service-box">
-      <i class="fas fa-scroll"></i>
-      <h3>Architectural Design</h3>
-      <p>Calligraphic concepts for interior design, wall murals, and mosque architecture.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section reveal" id="contact" style="text-align:center; border-top: 1px solid #eee;">
-  <h2>Start a Project</h2>
-  <p style="letter-spacing: 1px;">Based in Doha, Qatar — Shipping Worldwide</p>
-  <a class="btn" href="https://wa.me/97466531911">Consult via WhatsApp</a>
+<section class="section reveal" id="contact" style="text-align:center;">
+  <h2>Contact</h2>
+  <p>Available for commissions and teaching | <strong>Doha, Qatar</strong></p>
+  <a class="btn" href="https://wa.me/97466531911">WhatsApp Inquiry</a>
 </section>
 
 <footer>
   <p>© 2026 WAHEED QASMI. ALL RIGHTS RESERVED.</p>
-  <p style="margin-top: 10px; font-size: 0.6rem; opacity: 0.5;">TRADITION PRESERVED THROUGH PRECISION</p>
 </footer>
 
 <script async src="//www.instagram.com/embed.js"></script>
 
 <script>
-  // --- Smooth Scroll ---
-  document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // --- Scroll Reveal Logic ---
   function reveal() {
     var reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
+      var elementVisible = 100;
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("active");
       }
@@ -339,8 +303,14 @@
   }
 
   window.addEventListener("scroll", reveal);
-  // Initial check
   reveal();
+
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 </script>
 
 </body>
