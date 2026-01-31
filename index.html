@@ -142,15 +142,6 @@
         font-weight: 600;
     }
 
-    .signature {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.8rem;
-      color: var(--gold);
-      margin-top: 25px;
-      display: block;
-    }
-
     /* ================= TEACHING SECTION ================= */
     .teaching-box {
         background: #111;
@@ -186,17 +177,30 @@
         font-size: 0.9rem;
     }
 
-    /* ================= WORK GRID ================= */
-    .work-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+    /* ================= SOCIAL BUTTONS ================= */
+    .social-links {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
     }
 
-    .insta-card {
-      border-radius: 4px;
-      overflow: hidden;
-      background: #fff;
+    .social-btn {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.2rem;
+        transition: 0.4s;
+    }
+
+    .social-btn:hover {
+        background: var(--gold);
+        color: white;
+        transform: translateY(-5px);
     }
 
     /* ================= BUTTONS ================= */
@@ -211,6 +215,7 @@
       text-transform: uppercase;
       font-size: 0.75rem;
       transition: 0.4s;
+      margin: 10px;
     }
 
     .btn:hover { background: var(--gold); color: #fff; }
@@ -233,7 +238,7 @@
       }
       .teaching-content h2 { text-align: center; }
       .step-list li { text-align: left; }
-      header h1 { font-size: 2.5rem; }
+      header h1 { font-size: 2.2rem; }
       .hide-mobile { display: none; }
     }
   </style>
@@ -251,8 +256,8 @@
 
 <nav>
   <a href="#about">About</a>
-  <a href="#work">Portfolio</a>
   <a href="#teaching">Learning</a>
+  <a href="#work">Portfolio</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -264,10 +269,14 @@
         A distinguished <strong>Maulana and graduate of Darul Uloom Deoband, India</strong>, 
         Waheed Qasmi brings a unique blend of spiritual scholarship and artistic mastery to the world of Arabic script. 
         With over <strong>15 years of professional experience</strong>, he currently serves as a 
-        <strong>Professional Calligrapher (Khattat) and Tutor</strong> in Doha, Qatar, 
-        dedicating his craft to the preservation and teaching of classical Islamic arts.
+        <strong>Professional Calligrapher (Khattat) and Tutor</strong> in Doha, Qatar.
     </p>
-    <span class="signature">Waheed Qasmi</span>
+    
+    <div class="social-links">
+        <a href="https://www.facebook.com/qasmi.waheed" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/qasmiwaheed" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/97466531911" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </div>
 </section>
 
@@ -275,40 +284,46 @@
     <div class="teaching-box">
         <div class="teaching-content">
             <h2>Calligraphy Education</h2>
-            <p style="opacity: 0.8; margin-bottom: 25px;">Learn the sacred art of the pen under the guidance of a professional Tutor from the Abdullah bin Zaid Islamic Cultural Center. Courses are designed for all skill levels.</p>
+            <p style="opacity: 0.8; margin-bottom: 25px;">Master the art of the reed pen through structured lessons. We offer training from basic stroke mechanics to advanced classical compositions.</p>
             <ul class="step-list">
-                <li><strong>Basic Level:</strong> Understanding the anatomy of letters and the 'Nuqta' system.</li>
-                <li><strong>Intermediate Level:</strong> Mastering complex connections and flow.</li>
-                <li><strong>Advanced Level:</strong> Creating professional-grade compositions and artistic layouts.</li>
+                <li><strong>Basic Level:</strong> Tools, posture, and the Nuqta system.</li>
+                <li><strong>Intermediate Level:</strong> Letter connections and word flow.</li>
+                <li><strong>Advanced Level:</strong> Classical scripts and professional layouts.</li>
             </ul>
-            <a href="https://wa.me/97466531911" class="btn" style="color:#fff; border-color:#fff;">Inquire for Classes</a>
+            <a href="https://wa.me/97466531911" class="btn" style="color:#fff; border-color:#fff; margin-left: 0;">Enroll Now</a>
         </div>
         <div style="text-align: center;" class="hide-mobile">
-             <i class="fas fa-pen-fancy" style="font-size: 7rem; color: var(--gold); opacity: 0.9;"></i>
+             <i class="fas fa-pen-nib" style="font-size: 7rem; color: var(--gold); opacity: 0.9;"></i>
         </div>
     </div>
 </section>
 
 <section class="section" id="work" style="background-color: #f4f1ea; max-width: 100%;">
   <div style="max-width: 1100px; margin: auto;">
-    <h2 class="reveal">Selected Portfolio</h2>
-    <div class="work-container reveal">
-      <div class="insta-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYTUb7tPO9w/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
-      <div class="insta-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CbDERTQv6LH/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
-      <div class="insta-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYUoJvQB05A/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+    <h2 class="reveal">Gallery Selection</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;" class="reveal">
+      <div style="background: white; border-radius: 4px; overflow: hidden;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYTUb7tPO9w/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+      <div style="background: white; border-radius: 4px; overflow: hidden;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CbDERTQv6LH/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
+      <div style="background: white; border-radius: 4px; overflow: hidden;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYUoJvQB05A/" data-instgrm-version="14" style="width:100%;"></blockquote></div>
     </div>
   </div>
 </section>
 
 <section class="section reveal" id="contact" style="text-align:center;">
   <h2>Contact</h2>
-  <p>Available for commissions and teaching | <strong>Doha, Qatar</strong></p>
-  <p style="font-size: 0.9rem; color: var(--gold); margin-top: 5px;">Abdullah bin Zaid Islamic Cultural Center</p>
-  <a class="btn" href="https://wa.me/97466531911" style="margin-top:30px;">WhatsApp Inquiry</a>
+  <p>Available for global commissions and private tutoring.</p>
+  <p><strong>Doha, Qatar</strong></p>
+  
+  <div style="margin-top: 30px;">
+      <a class="btn" href="https://wa.me/97466531911"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a class="btn" href="https://www.facebook.com/qasmi.waheed" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+      <a class="btn" href="https://www.instagram.com/qasmiwaheed" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 WAHEED QASMI. ALL RIGHTS RESERVED.</p>
+  <p>© 2026 WAHEED QASMI. GRADUATE OF DARUL ULOOM DEOBAND.</p>
+  <p style="font-size: 0.7rem; margin-top: 10px; letter-spacing: 1px;">PROFESSIONAL CALLIGRAPHER AT ABDULLAH BIN ZAID ISLAMIC CULTURAL CENTER</p>
 </footer>
 
 <script async src="//www.instagram.com/embed.js"></script>
