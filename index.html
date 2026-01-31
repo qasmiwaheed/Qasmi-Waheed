@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waheed Qasmi – Master Arabic Calligrapher</title>
-  <meta name="description" content="Maulana Waheed Qasmi, graduate of Darul Uloom Deoband and Master Calligrapher with 15+ years of experience.">
+  <title>Waheed Qasmi – Maulana, Calligrapher (Khattat) & Tutor</title>
+  <meta name="description" content="Maulana Waheed Qasmi, graduate of Darul Uloom Deoband. Calligrapher (Khattat) and Tutor with 15+ years of experience.">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -141,28 +141,30 @@
       display: block;
     }
 
-    /* ================= TEACHING SECTION ================= */
+    /* ================= TEACHING SECTION (STABLE GRID) ================= */
     .teaching-box {
         background: #111;
         color: #fff;
-        padding: 60px;
+        padding: 80px 60px;
         border-radius: 4px;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
         gap: 40px;
         align-items: center;
+        min-height: 450px; /* Added to prevent height collapse */
     }
 
-    .teaching-content { flex: 1.5; min-width: 300px; }
-    .teaching-content h2 { text-align: left; color: var(--gold); margin-bottom: 20px; }
+    .teaching-content { min-width: 0; }
+    .teaching-content h2 { text-align: left; color: var(--gold); margin-bottom: 25px; }
     .teaching-content h2::after { display: none; }
 
-    .step-list { list-style: none; padding: 0; }
+    .step-list { list-style: none; padding: 0; margin-bottom: 30px; }
     .step-list li { 
         margin-bottom: 20px; 
-        padding-left: 30px; 
+        padding-left: 35px; 
         position: relative; 
         font-weight: 300;
+        line-height: 1.6;
     }
     .step-list li::before {
         content: "\f040"; 
@@ -171,6 +173,7 @@
         position: absolute;
         left: 0;
         color: var(--gold);
+        font-size: 0.9rem;
     }
 
     /* ================= WORK GRID ================= */
@@ -198,7 +201,6 @@
       text-transform: uppercase;
       font-size: 0.75rem;
       transition: 0.4s;
-      margin-top: 30px;
     }
 
     .btn:hover { background: var(--gold); color: #fff; }
@@ -212,9 +214,17 @@
       font-size: 0.8rem;
     }
 
-    @media (max-width: 768px) {
-      .teaching-box { padding: 30px; }
+    /* Responsive Fixes */
+    @media (max-width: 850px) {
+      .teaching-box { 
+          grid-template-columns: 1fr; 
+          padding: 60px 30px;
+          text-align: center;
+      }
+      .teaching-content h2 { text-align: center; }
+      .step-list li { text-align: left; }
       header h1 { font-size: 2.5rem; }
+      .hide-mobile { display: none; }
     }
   </style>
 </head>
@@ -224,7 +234,7 @@
 <header id="home">
   <div class="reveal active">
     <h1>Waheed Qasmi</h1>
-    <p>Maulana & Master Calligrapher</p>
+    <p>Maulana, Calligrapher (Khattat) & Tutor</p>
   </div>
 </header>
 
@@ -241,8 +251,8 @@
     <p style="font-size:1.1rem; max-width: 800px; margin: auto;">
         A distinguished <strong>Maulana and graduate of Darul Uloom Deoband, India</strong>, 
         Waheed Qasmi brings a unique blend of spiritual scholarship and artistic mastery to the world of Arabic script. 
-        With over <strong>15 years of professional experience</strong>, his work is characterized by 
-        precision, devotion, and a deep respect for the classical rules of calligraphy.
+        With over <strong>15 years of professional experience</strong>, he is a dedicated 
+        <strong>Calligrapher (Khattat) and Tutor</strong> whose work is characterized by precision and deep devotion.
     </p>
     <span class="signature">Waheed Qasmi</span>
   </div>
@@ -252,7 +262,7 @@
     <div class="teaching-box">
         <div class="teaching-content">
             <h2>Calligraphy Education</h2>
-            <p style="opacity: 0.8;">Learn the sacred art of the pen under the guidance of a master. Courses are designed to take students through a complete journey of discipline and beauty.</p>
+            <p style="opacity: 0.8; margin-bottom: 25px;">Learn the sacred art of the pen under the guidance of a Maulana and professional Tutor. Courses are designed to take students through a complete journey of discipline and beauty.</p>
             <ul class="step-list">
                 <li><strong>Basic Level:</strong> Understanding the anatomy of letters and the 'Nuqta' system.</li>
                 <li><strong>Intermediate Level:</strong> Mastering complex connections and flow.</li>
@@ -260,8 +270,8 @@
             </ul>
             <a href="https://wa.me/97466531911" class="btn" style="color:#fff; border-color:#fff;">Inquire for Classes</a>
         </div>
-        <div style="flex: 1; text-align: center;">
-             <i class="fas fa-pen-fancy" style="font-size: 6rem; color: var(--gold);"></i>
+        <div style="text-align: center;" class="hide-mobile">
+             <i class="fas fa-pen-fancy" style="font-size: 7rem; color: var(--gold); opacity: 0.9;"></i>
         </div>
     </div>
 </section>
@@ -280,7 +290,7 @@
 <section class="section reveal" id="contact" style="text-align:center;">
   <h2>Contact</h2>
   <p>Available for commissions and teaching | <strong>Doha, Qatar</strong></p>
-  <a class="btn" href="https://wa.me/97466531911">WhatsApp Inquiry</a>
+  <a class="btn" href="https://wa.me/97466531911" style="margin-top:30px;">WhatsApp Inquiry</a>
 </section>
 
 <footer>
@@ -308,7 +318,14 @@
   document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if(targetElement) {
+        window.scrollTo({
+            top: targetElement.offsetTop - 70, 
+            behavior: 'smooth'
+        });
+      }
     });
   });
 </script>
