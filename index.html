@@ -4,17 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Waheed Qasmi – Arabic Calligrapher</title>
-  <meta name="description" content="Master Arabic Calligrapher Waheed Qasmi, specializing in custom commissions and luxury branding with over 15 years of experience.">
+  <meta name="description" content="Master Arabic Calligrapher Waheed Qasmi, specializing in custom commissions and luxury branding.">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --gold: #a88b3e; /* Deeper antique gold */
+      --gold: #a88b3e;
       --dark: #111;
       --light: #fdfaf6;
     }
@@ -27,7 +25,7 @@
       line-height: 1.8;
     }
 
-    /* ================= HEADER ================= */
+    /* ================= HEADER & NAV ================= */
     header {
       background: linear-gradient(to bottom, #222, #111);
       color: #fff;
@@ -41,15 +39,8 @@
       margin: 0;
       color: var(--gold);
       letter-spacing: 1px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
 
-    header p {
-      letter-spacing: 3px;
-      font-weight: 300;
-    }
-
-    /* ================= NAV ================= */
     nav {
       position: sticky;
       top: 0;
@@ -68,138 +59,84 @@
       letter-spacing: 2px;
       font-weight: 600;
       text-transform: uppercase;
-      transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #fff;
+    /* ================= NEW INSTAGRAM GALLERY ================= */
+    .instagram-section {
+      background: #fff;
+      padding: 100px 20px;
     }
 
-    /* ================= SECTIONS ================= */
-    .section {
-      padding: 120px 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 1px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    }
-
-    .section h2::after {
-      content: "";
-      display: block;
-      width: 50px;
-      height: 2px;
-      background: var(--gold);
-      margin: 15px auto 0;
-    }
-
-    /* ================= HD GALLERY ================= */
-    .gallery-grid {
+    .insta-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
     }
 
-    .gallery-item {
-      background: #000;
-      border-radius: 10px;
+    .insta-item {
+      position: relative;
       overflow: hidden;
-      aspect-ratio: 4 / 5; /* prevents stretching */
-      transition: transform 0.3s ease;
+      border-radius: 8px;
+      aspect-ratio: 1 / 1;
+      background: #eee;
     }
 
-    .gallery-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    .gallery-item img {
+    .insta-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Changed to cover for polished look */
-      image-rendering: auto;
-      transform: translateZ(0);
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
 
-    .featured {
-      grid-column: span 2;
+    .insta-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(168, 139, 62, 0.8); /* Gold overlay */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: white;
+      font-size: 1.5rem;
     }
 
-    @media (max-width: 768px) {
-      .featured {
-        grid-column: span 1;
-      }
+    .insta-item:hover .insta-overlay {
+      opacity: 1;
     }
 
-    /* ================= SERVICES ================= */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+    .insta-item:hover img {
+      transform: scale(1.1);
     }
 
-    .service-box {
-      background: #fff;
-      padding: 40px;
-      border-radius: 8px;
-      border: 1px solid #eee;
+    .view-more-container {
       text-align: center;
-      transition: 0.3s;
+      margin-top: 30px;
     }
 
-    .service-box:hover {
-      transform: translateY(-8px);
-      border-color: var(--gold);
+    .insta-link {
+        color: var(--gold);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    /* ================= BUTTON ================= */
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: #fff;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 20px;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: var(--dark);
-      color: #888;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    /* Mobile Adjustments */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      nav {
-        padding: 10px 0;
-      }
-      nav a {
-        margin: 0 10px;
-        font-size: 0.75rem;
-      }
-      .btn {
-        width: 80%;
-        margin: 20px auto;
-        display: block;
-      }
-    }
+    /* ================= GENERAL STYLES ================= */
+    .section { padding: 100px 40px; max-width: 1200px; margin: auto; }
+    .section h2 { text-align: center; font-size: 2.5rem; font-family: 'Playfair Display', serif; }
+    .section h2::after { content: ""; display: block; width: 50px; height: 2px; background: var(--gold); margin: 15px auto 0; }
+    
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .service-box { background: #fff; padding: 40px; border-radius: 8px; border: 1px solid #eee; text-align: center; }
+    
+    .btn { display: inline-block; background: var(--gold); color: #fff; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; }
+    footer { background: var(--dark); color: #888; text-align: center; padding: 40px 20px; }
   </style>
 </head>
-
 <body>
 
 <header id="home">
@@ -207,30 +144,56 @@
   <p>MASTER OF ARABIC CALLIGRAPHY</p>
 </header>
 
-<nav aria-label="Main navigation">
-  <a href="#about" onclick="smoothScroll(event)">About</a>
-  <a href="#services" onclick="smoothScroll(event)">Services</a>
-  <a href="#contact" onclick="smoothScroll(event)">Contact</a>
+<nav>
+  <a href="#about">About</a>
+  <a href="#work">Recent Work</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section class="section" id="about">
   <h2>The Artist</h2>
   <p style="text-align:center; max-width:800px; margin:auto; font-size:1.1rem;">
-    With over 15 years of mastery, Waheed Qasmi transforms sacred script into timeless visual art,
-    preserving the classical beauty of Arabic calligraphy with contemporary elegance.
+    With over 15 years of mastery, Waheed Qasmi transforms sacred script into timeless visual art.
   </p>
+</section>
+
+<section class="instagram-section" id="work">
+  <h2>Portfolio on Instagram</h2>
+  <div class="insta-grid">
+    
+    <a href="https://www.instagram.com/qasmiwaheed/" target="_blank" class="insta-item">
+      <img src="https://via.placeholder.com/500x500?text=Calligraphy+1" alt="Arabic Calligraphy Work">
+      <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+
+    <a href="https://www.instagram.com/qasmiwaheed/" target="_blank" class="insta-item">
+      <img src="https://via.placeholder.com/500x500?text=Calligraphy+2" alt="Arabic Calligraphy Work">
+      <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+
+    <a href="https://www.instagram.com/qasmiwaheed/" target="_blank" class="insta-item">
+      <img src="https://via.placeholder.com/500x500?text=Calligraphy+3" alt="Arabic Calligraphy Work">
+      <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+
+  </div>
+
+  <div class="view-more-container">
+    <a href="https://www.instagram.com/qasmiwaheed/" target="_blank" class="insta-link">
+      See more on @qasmiwaheed <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
 </section>
 
 <section class="section" id="services">
   <h2>Services</h2>
-
   <div class="services-grid">
     <div class="service-box">
       <i class="fas fa-pen-nib" style="font-size:2rem; color:var(--gold); margin-bottom:15px;"></i>
       <h3 style="color:var(--gold);">Custom Commissions</h3>
       <p>Personalized Arabic calligraphy for homes, offices, and collectors.</p>
     </div>
-
     <div class="service-box">
       <i class="fas fa-palette" style="font-size:2rem; color:var(--gold); margin-bottom:15px;"></i>
       <h3 style="color:var(--gold);">Logos & Branding</h3>
@@ -241,39 +204,13 @@
 
 <section class="section" id="contact" style="text-align:center;">
   <h2>Get in Touch</h2>
-  <p>Available for global commissions</p>
-  <p><strong>Doha, Qatar</strong></p>
+  <p>Available for global commissions | <strong>Doha, Qatar</strong></p>
   <a class="btn" href="https://wa.me/97466531911">Message on WhatsApp</a>
 </section>
 
 <footer>
   <p>© 2026 Waheed Qasmi — Preserving the beauty of tradition</p>
 </footer>
-
-<script>
-  function smoothScroll(e) {
-    e.preventDefault();
-    const targetId = e.target.getAttribute('href');
-    document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-  }
-
-  const sections = document.querySelectorAll('.section');
-  const options = { threshold: 0.1 };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, options);
-  sections.forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = 'translateY(50px)';
-    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    observer.observe(section);
-  });
-</script>
 
 </body>
 </html>
