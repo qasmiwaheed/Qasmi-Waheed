@@ -63,16 +63,16 @@
       transform: translateY(0);
     }
 
-    /* ================= PREMIUM HERO SECTION (VERIFIED QATAR MOSQUE NIGHTSCAPE) ================= */
+    /* ================= BULLETPROOF ISLAMIC ARABIC DESIGN PATTERN ================= */
     header {
       position: relative;
       height: 100vh;
-      /* Using a reliable Wikimedia public domain image of the Grand Mosque in Doha, Qatar */
-      background: linear-gradient(rgba(15, 15, 20, 0.6), rgba(10, 10, 15, 0.85)), 
-                  url('https://upload.wikimedia.org/wikipedia/commons/4/44/State_Grand_Mosque_Doha_Qatar.jpg');
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
+      background-color: #141419;
+      /* Built-in rich luxury dynamic geometric lattice grid for an arabesque theme background */
+      background-image: radial-gradient(circle at center, rgba(20, 20, 25, 0.2) 0%, rgba(10, 10, 12, 0.95) 100%), 
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23d4af37' fill-opacity='0.08'%3E%3Cpath d='M30 0l30 30-30 30L0 30z'/%3E%3Cpath d='M9 30h42M30 9v42' stroke='%23d4af37' stroke-width='0.5' stroke-opacity='0.1'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: auto;
+      background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -222,7 +222,7 @@
       font-weight: 600;
     }
 
-    /* ================= ABOUT ARTIST ================= */
+    /* ================= ABOUT ARTIST (RE-DESIGNED WITH LIVE VECTOR BLOCK) ================= */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -233,19 +233,33 @@
     .about-image-frame {
       position: relative;
       border: 1px solid var(--border-color);
-      padding: 12px;
-      background: var(--bg-secondary);
-      box-shadow: var(--card-shadow);
+      padding: 40px;
+      background: #111116;
+      /* CSS embedded abstract Arabic calligraphy script texture */
+      background-image: radial-gradient(rgba(17,17,22,0.3) 0%, rgba(17,17,22,0.95) 100%), 
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23d4af37' fill-opacity='0.05' font-family='Cinzel, serif' font-size='12'%3E%3Ctext x='10' y='30'%3E%u0627%u0644%u062e%u0637%3C/text%3E%3Ctext x='50' y='60'%3E%u0642%u0644%u0645%3C/text%3E%3Ctext x='20' y='80'%3E%u0641%u0646%3C/text%3E%3C/g%3E%3C/svg%3E");
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       border-radius: 4px;
+      box-shadow: var(--card-shadow);
+      text-align: center;
     }
 
-    .about-image-frame img {
-      width: 100%;
-      height: auto;
-      max-height: 450px;
-      object-fit: cover;
-      display: block;
-      transition: var(--transition);
+    .about-vector-icon {
+      font-size: 4.5rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .about-vector-caption {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.6);
     }
 
     .about-content h3 {
@@ -409,7 +423,7 @@
 
 <button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
-<!-- Header Splash with Reliable Qatar Grand Mosque Nightscape -->
+<!-- Header Splash with Secure Built-in Arabesque Pattern Framework -->
 <header id="home">
   <div class="hero-container">
     <span class="hero-badge">Official Portfolio</span>
@@ -433,12 +447,14 @@
   </button>
 </nav>
 
-<!-- Clean Editorial About Section with Verified Script Calligraphy Asset -->
+<!-- Clean Editorial About Section with Bulletproof Artistic Typography Graphic -->
 <section class="section reveal" id="about">
   <div class="about-grid">
     <div class="about-image-frame">
-      <!-- High speed public domain Arabic calligraphy manuscript layout -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Arabic_calligraphy_al-ikhlas.jpg" alt="Classical Arabic Calligraphy Manuscript Art">
+      <div class="about-vector-icon">
+        <i class="fas fa-pen-nib"></i>
+      </div>
+      <div class="about-vector-caption">Arabic Calligraphy Art</div>
     </div>
     <div class="about-content">
       <span class="institution">Abdullah bin Zaid Islamic Cultural Center</span>
