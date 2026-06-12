@@ -344,4 +344,257 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       font-size: 0.75rem;
-      font-weight: 6
+      font-weight: 600;
+      transition: var(--transition);
+      background: transparent;
+    }
+
+    .btn-solid {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(214, 175, 55, 0.15);
+    }
+
+    .btn-solid:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+
+    /* ================= BACK TO TOP ================= */
+    #backToTop {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        display: none;
+        background: var(--gold);
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2000;
+        transition: var(--transition);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    #backToTop:hover { background: var(--gold-dark); transform: scale(1.1); }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #0a0a0a;
+      color: #888;
+      text-align: center;
+      padding: 100px 20px;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(214, 175, 55, 0.1);
+    }
+
+    footer p { max-width: 600px; margin: 0 auto 15px; }
+
+    /* ================= RESPONSIVE ADJUSTMENTS ================= */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .section { padding: 90px 20px; }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-links {
+        gap: 10px 15px;
+      }
+      nav a {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+
+<header id="home">
+  <div class="hero-container">
+    <span class="hero-badge">Official Portfolio</span>
+    <h1>Waheed Qasmi</h1>
+    <div class="hero-subtitle">Maulana • Calligrapher • Master Tutor</div>
+    <p style="opacity: 0.7; font-size: 0.85rem; margin-top: 30px; letter-spacing: 4px; text-transform: uppercase;">Doha, Qatar</p>
+  </div>
+  <i class="fas fa-chevron-down scroll-down" onclick="document.getElementById('navbar').scrollIntoView();"></i>
+</header>
+
+<nav id="navbar">
+  <div class="nav-links">
+    <a href="#about">The Artist</a>
+    <a href="#teaching">Classical Courses</a>
+    <a href="#work">Gallery</a>
+    <a href="#contact">Commissions</a>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+    <i class="fas fa-moon"></i>
+  </button>
+</nav>
+
+<section class="section reveal" id="about">
+  <div class="about-grid">
+    <div class="about-image-frame">
+      <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/arabic-calligraphy-glowing-art-shadia-dergacheva.jpg" alt="Beautiful Glowing Arabic Calligraphy Art Canvas">
+    </div>
+    <div class="about-content">
+      <span class="institution">Abdullah bin Zaid Islamic Cultural Center</span>
+      <h3>The Art of the Sacred Pen</h3>
+      <p style="color: var(--text-muted); font-weight: 300; font-size: 1.05rem; margin-bottom: 30px;">
+        A graduate of the prestigious <strong>Darul Uloom Deoband</strong>, Maulana Waheed Qasmi beautifully bridges traditional Islamic scholarship with the aesthetic visual elegance of Arabic Calligraphy. 
+      </p>
+      <p style="color: var(--text-muted); font-weight: 300; font-size: 1.05rem; margin-bottom: 40px;">
+        With over 15 years of absolute creative dedication, his compositions transform classic parchment into windows of deep spiritual reflection.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+          <a href="https://wa.me/97466531911" class="btn btn-solid"><i class="fab fa-whatsapp"></i> Book Consultation</a>
+          <a href="#work" class="btn">View Gallery</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="teaching">
+    <div class="section-title-wrapper">
+        <h2>Classical Training</h2>
+        <div class="section-subtitle">Preserving traditional frameworks</div>
+    </div>
+    
+    <div class="teaching-grid">
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-pen-fancy"></i></div>
+            <h4>1. The Foundation</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Mastering the anatomy of the hand-carved organic bamboo 'Qalam', learning paper preparation, and managing traditional ink consistency.</p>
+        </div>
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-compass"></i></div>
+            <h4>2. The Discipline</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Immersing into the absolute precision of the structural Nuqta (dot) measurement framework system across Thuluth, Naskh, and Diwani styles.</p>
+        </div>
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-scroll"></i></div>
+            <h4>3. Master Compositions</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Progressing into fluid complex geometric structural configurations, large scale wall layouts, and complex architectural integrations.</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+         <a href="https://wa.me/97466531911" class="btn btn-solid">Apply For Student Admission</a>
+    </div>
+</section>
+
+<div class="portfolio-bg">
+  <section class="section" id="work">
+    <div class="section-title-wrapper reveal">
+        <h2>Selected Masterpieces</h2>
+        <div class="section-subtitle">Portfolio Exhibition</div>
+    </div>
+
+    <div class="portfolio-grid reveal">
+      <div class="insta-wrapper">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYTUb7tPO9w/" data-instgrm-version="14" style="width:100%; margin:0;"></blockquote>
+      </div>
+      <div class="insta-wrapper">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CbDERTQv6LH/" data-instgrm-version="14" style="width:100%; margin:0;"></blockquote>
+      </div>
+      <div class="insta-wrapper">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYUoJvQB05A/" data-instgrm-version="14" style="width:100%; margin:0;"></blockquote>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="https://www.instagram.com/qasmiwaheed" target="_blank" class="btn"><i class="fab fa-instagram"></i> Follow Official Feed</a>
+    </div>
+  </section>
+</div>
+
+<section class="section reveal" id="contact" style="text-align:center; max-width: 800px;">
+  <div class="section-title-wrapper">
+      <h2>Commissions & Inquiries</h2>
+      <div class="section-subtitle">Global Correspondence</div>
+  </div>
+  <p style="font-size: 1.1rem; font-weight: 300; color: var(--text-muted); margin-bottom: 40px;">
+    Open to luxury private commissions, architectural custom installations, international workshops, and elite private online/offline mentoring.
+  </p>
+  
+  <p style="letter-spacing: 2px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 40px;">
+    <i class="fas fa-map-marker-alt" style="color:var(--gold); margin-right: 10px;"></i> Resident in <strong>Doha, Qatar</strong>
+  </p>
+
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+      <a class="btn btn-solid" href="https://wa.me/97466531911"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a>
+      <a class="btn" href="https://www.facebook.com/qasmi.waheed" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+      <a class="btn" href="https://www.instagram.com/qasmiwaheed" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+</section>
+
+<footer>
+  <p style="letter-spacing: 3px; color: #fff; font-size: 0.9rem; font-family: 'Cinzel', serif;">© 2026 WAHEED QASMI</p>
+  <p style="font-size: 0.75rem; letter-spacing: 2px; color: #666;">MAULANA • GRADUATE OF DARUL ULOOM DEOBAND</p>
+  <p style="font-size: 0.75rem; color: var(--gold); margin-top: 25px; text-transform: uppercase; letter-spacing: 2px;">Abdullah bin Zaid Islamic Cultural Center, Qatar</p>
+</footer>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+<script>
+  // Dynamic Scroll Reveal Logic 
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 80;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+  window.addEventListener("scroll", reveal);
+  reveal();
+
+  // Smooth Back to Top Control Engine
+  const btt = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+      btt.style.display = "block";
+    } else {
+      btt.style.display = "none";
+    }
+  };
+  btt.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
+  // Luxury Theme Engine Light/Dark Switch Toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = themeToggle.querySelector('i');
+  
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+      document.documentElement.removeAttribute('data-theme');
+      themeIcon.className = 'fas fa-moon';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.className = 'fas fa-sun';
+    }
+  });
+</script>
+
+</body>
+</html>
