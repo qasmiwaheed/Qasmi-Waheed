@@ -64,16 +64,17 @@
       transform: translateY(0);
     }
 
-    /* ================= PREMIUM HERO SECTION (REAL QATAR FANAR NIGHT BACKGROUND) ================= */
+    /* ================= BULLETPROOF ISLAMIC GEOMETRIC BACKGROUND ================= */
     header {
       position: relative;
       height: 100vh;
-      /* Background completely updated to Qatar Fanar Center Spiral Minaret Nightscape */
-      background: linear-gradient(rgba(10, 10, 12, 0.6), rgba(10, 10, 12, 0.85)), 
-                  url('https://images.unsplash.com/photo-1590012351474-32b0e0ee464e?auto=format&fit=crop&q=80&w=2000');
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
+      /* Deep luxury dark background base */
+      background-color: #111116;
+      /* High-end luxury SVG Islamic Star Pattern embedded directly in code so it NEVER fails */
+      background-image: radial-gradient(rgba(20, 20, 25, 0.4) 0%, rgba(10, 10, 12, 0.9) 100%), 
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af37' fill-opacity='0.06'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40l20 20-20 20-20-20 20-20zm0 40l20 20-20 20-20-20 20-20z'/%3E%3Cpath d='M20 0l20 20-20 20L0 20 20 0zm40 40l20 20-20 20-40-20 20-20z'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='80' cy='0' r='2'/%3E%3Ccircle cx='0' cy='80' r='2'/%3E%3Ccircle cx='80' cy='80' r='2'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: auto;
+      background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -236,15 +237,22 @@
     .about-image-frame {
       position: relative;
       border: 1px solid var(--border-color);
-      padding: 15px;
-      background: var(--bg-secondary);
+      padding: 40px;
+      background: #111116;
+      /* Inline SVG Calligraphy pattern for artistic box styling */
+      background-image: radial-gradient(rgba(17,17,22,0.2) 0%, rgba(17,17,22,0.8) 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23d4af37' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      min-height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      box-shadow: var(--card-shadow);
     }
 
-    .about-image-frame img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: var(--transition);
+    .about-image-fallback-icon {
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.8;
     }
 
     .about-content h3 {
@@ -408,7 +416,7 @@
 
 <button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
-<!-- Header Splash with Qatar Fanar Center Night Background Image -->
+<!-- Header Splash with Native CSS Geometric Islamic Star Pattern Framework -->
 <header id="home">
   <div class="hero-container">
     <span class="hero-badge">Official Portfolio</span>
@@ -432,12 +440,13 @@
   </button>
 </nav>
 
-<!-- Clean Editorial About Section with Calligraphy Focused Asset -->
+<!-- Clean Editorial About Section with Solid CSS Pattern Calligraphy Frame -->
 <section class="section reveal" id="about">
   <div class="about-grid">
     <div class="about-image-frame">
-      <!-- High speed premium image showing traditional Arabic Calligraphy script writing -->
-      <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=800" alt="Arabic Calligraphy Artwork Process">
+      <div class="about-image-fallback-icon">
+        <i class="fas fa-mosque"></i>
+      </div>
     </div>
     <div class="about-content">
       <span class="institution">Abdullah bin Zaid Islamic Cultural Center</span>
@@ -570,21 +579,4 @@
     window.scrollTo({top: 0, behavior: 'smooth'});
   };
 
-  // Luxury Theme Engine Light/Dark Switch Toggle
-  const themeToggle = document.getElementById('themeToggle');
-  const themeIcon = themeToggle.querySelector('i');
-  
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if (currentTheme === 'dark') {
-      document.documentElement.removeAttribute('data-theme');
-      themeIcon.className = 'fas fa-moon';
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      themeIcon.className = 'fas fa-sun';
-    }
-  });
-</script>
-
-</body>
-</html>
+  // Luxury
