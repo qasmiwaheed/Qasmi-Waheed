@@ -68,7 +68,6 @@
       position: relative;
       height: 100vh;
       background-color: #141419;
-      /* Built-in rich luxury dynamic geometric lattice grid for an arabesque theme background */
       background-image: radial-gradient(circle at center, rgba(20, 20, 25, 0.2) 0%, rgba(10, 10, 12, 0.95) 100%), 
                         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23d4af37' fill-opacity='0.08'%3E%3Cpath d='M30 0l30 30-30 30L0 30z'/%3E%3Cpath d='M9 30h42M30 9v42' stroke='%23d4af37' stroke-width='0.5' stroke-opacity='0.1'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/svg%3E");
       background-size: auto;
@@ -222,7 +221,7 @@
       font-weight: 600;
     }
 
-    /* ================= ABOUT ARTIST (RE-DESIGNED WITH LIVE VECTOR BLOCK) ================= */
+    /* ================= ABOUT ARTIST ================= */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -235,7 +234,6 @@
       border: 1px solid var(--border-color);
       padding: 40px;
       background: #111116;
-      /* CSS embedded abstract Arabic calligraphy script texture */
       background-image: radial-gradient(rgba(17,17,22,0.3) 0%, rgba(17,17,22,0.95) 100%), 
                         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23d4af37' fill-opacity='0.05' font-family='Cinzel, serif' font-size='12'%3E%3Ctext x='10' y='30'%3E%u0627%u0644%u062e%u0637%3C/text%3E%3Ctext x='50' y='60'%3E%u0642%u0644%u0645%3C/text%3E%3Ctext x='20' y='80'%3E%u0641%u0646%3C/text%3E%3C/g%3E%3C/svg%3E");
       min-height: 380px;
@@ -313,24 +311,40 @@
       font-weight: 400;
     }
 
-    /* ================= PREMIUM PORTFOLIO ================= */
+    /* ================= PREMIUM INSTAGRAM GALLERY (FIXED TO INSIDE BOX) ================= */
     .portfolio-bg { background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
     
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Scale down baseline grid boundaries */
       gap: 30px;
+      width: 100%;
     }
 
     .insta-wrapper {
       background: var(--bg-primary);
-      padding: 12px;
+      padding: 10px;
       border: 1px solid var(--border-color);
       border-radius: 4px;
       box-shadow: var(--card-shadow);
       transition: var(--transition);
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden; /* Lock escaping visual components inside frame */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .insta-wrapper:hover { transform: scale(1.02); }
+
+    /* Force the third party script frame element itself to stay flexible */
+    .insta-wrapper iframe {
+      max-width: 100% !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      margin: 0 auto !important;
+    }
+    
+    .insta-wrapper:hover { transform: scale(1.01); }
 
     /* ================= LUXURY BUTTONS ================= */
     .btn {
@@ -414,6 +428,9 @@
       nav a {
         font-size: 0.75rem;
         letter-spacing: 1px;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -502,7 +519,7 @@
     </div>
 </section>
 
-<!-- Gallery Showcase Section -->
+<!-- Gallery Showcase Section with Dynamic Wrapping Constraints -->
 <div class="portfolio-bg">
   <section class="section" id="work">
     <div class="section-title-wrapper reveal">
