@@ -8,6 +8,7 @@
   <meta name="description" content="Maulana Waheed Qasmi, Professional Calligrapher at the Abdullah bin Zaid Islamic Cultural Center (Qatar). Expert in classical Arabic scripts and Darul Uloom Deoband graduate.">
   <meta name="keywords" content="Arabic Calligraphy, Qatar Calligrapher, Waheed Qasmi, Khattat, Islamic Art Tutor, Doha Calligraphy">
 
+  <!-- Premium Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -62,16 +63,17 @@
       transform: translateY(0);
     }
 
-    /* ================= PREMIUM HERO SECTION (VERIFIED SECURE QATAR GRAND MOSQUE) ================= */
+    /* ================= PERMANENT BLOCK-PROOF HERO (QATAR FANAR SPIRAL MINARET) ================= */
     header {
       position: relative;
       height: 100vh;
-      /* Using a premium, fully secure global cloud CDN for the famous illuminated Grand Mosque of Doha, Qatar */
-      background: linear-gradient(rgba(12, 12, 18, 0.55), rgba(8, 8, 12, 0.85)), 
-                  url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/qatar-state-mosque-doha-panoramic-images.jpg');
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
+      background-color: #0f1015;
+      /* Direct built-in Vector of the iconic Fanar Spiral Minaret in Doha - 100% crash proof */
+      background-image: linear-gradient(rgba(15, 16, 21, 0.4), rgba(10, 11, 14, 0.9)), 
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800' width='100%25' height='100%25'%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='0.15' stroke-width='1.5'%3E%3Cpath d='M400,750 L400,450'/%3E%3Cpath d='M320,750 L320,550 C320,500 480,500 480,450 C480,400 320,400 320,330 C320,260 480,260 480,180 C480,120 400,100 400,50' stroke-width='3'/%3E%3Cpath d='M340,750 L340,560 C340,515 460,515 460,450 C460,405 340,405 340,340 C340,275 460,275 460,190 C460,135 400,115 400,60'/%3E%3Ccircle cx='400' cy='45' r='5' fill='%23d4af37'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center bottom;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -83,6 +85,7 @@
     .hero-container {
       max-width: 900px;
       z-index: 2;
+      margin-bottom: 80px;
     }
 
     header h1 {
@@ -93,7 +96,7 @@
       letter-spacing: 6px;
       font-weight: 400;
       text-transform: uppercase;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      text-shadow: 0 4px 15px rgba(0,0,0,0.8);
     }
 
     .hero-subtitle {
@@ -104,7 +107,7 @@
       margin-top: 15px;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.9);
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
 
     .hero-badge {
@@ -221,7 +224,7 @@
       font-weight: 600;
     }
 
-    /* ================= ABOUT ARTIST (SECURE HIGH-SPEED CALLIGRAPHY LINK) ================= */
+    /* ================= ABOUT ARTIST (100% UNBLOCKABLE ARABIC CALLIGRAPHY VEIL) ================= */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -232,19 +235,33 @@
     .about-image-frame {
       position: relative;
       border: 1px solid var(--border-color);
-      padding: 12px;
-      background: var(--bg-secondary);
+      padding: 20px;
+      background: #0f1015;
       box-shadow: var(--card-shadow);
       border-radius: 4px;
+      min-height: 380px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Embedded pure code vector representing majestic circular Arabic Calligraphy - 100% reliable */
+      background-image: radial-gradient(rgba(15, 16, 21, 0.2) 0%, rgba(15, 16, 21, 0.85) 100%),
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%25' height='100%25'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='1' stroke-opacity='0.25'%3E%3Ccircle cx='200' cy='200' r='120' stroke-dasharray='5,5'/%3E%3Ccircle cx='200' cy='200' r='100'/%3E%3Ccircle cx='200' cy='200' r='80' stroke-dasharray='10,5'/%3E%3Cpath d='M200,60 C250,60 310,120 310,200 C310,280 230,320 200,320 C170,320 90,280 90,200 C90,120 150,60 200,60 Z' stroke-width='2'/%3E%3Cpath d='M130,130 C160,100 240,100 270,130 C300,160 300,240 270,270 C240,300 160,300 130,270 C100,240 100,160 130,130 Z' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    .about-image-frame img {
-      width: 100%;
-      height: auto;
-      max-height: 430px;
-      object-fit: cover;
-      display: block;
+    .about-inner-badge {
+      border: 1px solid rgba(214, 175, 55, 0.4);
+      padding: 12px 24px;
+      background: rgba(15, 16, 21, 0.9);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 3px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
       border-radius: 2px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     }
 
     .about-content h3 {
@@ -298,7 +315,7 @@
       font-weight: 400;
     }
 
-    /* ================= PREMIUM INSTAGRAM GALLERY (LOCKED TO MOBILE FRAME) ================= */
+    /* ================= PREMIUM INSTAGRAM GALLERY (LOCKED IN BOX) ================= */
     .portfolio-bg { background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
     
     .portfolio-grid {
@@ -426,6 +443,7 @@
 
 <button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
+<!-- Header Splash with Direct Built-in Qatar Fanar Spiral Minaret Vector -->
 <header id="home">
   <div class="hero-container">
     <span class="hero-badge">Official Portfolio</span>
@@ -436,6 +454,7 @@
   <i class="fas fa-chevron-down scroll-down" onclick="document.getElementById('navbar').scrollIntoView();"></i>
 </header>
 
+<!-- Modern Sticky Navigation -->
 <nav id="navbar">
   <div class="nav-links">
     <a href="#about">The Artist</a>
@@ -448,16 +467,17 @@
   </button>
 </nav>
 
+<!-- Clean Editorial About Section with Secure Calligraphy Vector Art Base -->
 <section class="section reveal" id="about">
   <div class="about-grid">
     <div class="about-image-frame">
-      <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/arabic-calligraphy-glowing-art-shadia-dergacheva.jpg" alt="Beautiful Glowing Arabic Calligraphy Art Canvas">
+      <div class="about-inner-badge">Islamic Calligraphy Art</div>
     </div>
     <div class="about-content">
       <span class="institution">Abdullah bin Zaid Islamic Cultural Center</span>
       <h3>The Art of the Sacred Pen</h3>
       <p style="color: var(--text-muted); font-weight: 300; font-size: 1.05rem; margin-bottom: 30px;">
-        A graduate of the prestigious <strong>Darul Uloom Deoband</strong>, Maulana Waheed Qasmi beautifully bridges traditional Islamic scholarship with the aesthetic visual elegance of Arabic Calligraphy. 
+        A graduate of the prestigious <strong>Darul Uloom Deoband</strong>, Maulana Waheed Qasmi beautifully bridges traditional Islamic scholarship with the aesthetic visual elegance of Arabic Calligraphy.
       </p>
       <p style="color: var(--text-muted); font-weight: 300; font-size: 1.05rem; margin-bottom: 40px;">
         With over 15 years of absolute creative dedication, his compositions transform classic parchment into windows of deep spiritual reflection.
@@ -470,6 +490,7 @@
   </div>
 </section>
 
+<!-- Cards Grid Teaching Section -->
 <section class="section reveal" id="teaching">
     <div class="section-title-wrapper">
         <h2>Classical Training</h2>
@@ -498,6 +519,7 @@
     </div>
 </section>
 
+<!-- Gallery Showcase Section with Dynamic Wrapping Constraints -->
 <div class="portfolio-bg">
   <section class="section" id="work">
     <div class="section-title-wrapper reveal">
@@ -523,6 +545,7 @@
   </section>
 </div>
 
+<!-- Premium Contact & Booking Interface -->
 <section class="section reveal" id="contact" style="text-align:center; max-width: 800px;">
   <div class="section-title-wrapper">
       <h2>Commissions & Inquiries</h2>
@@ -543,6 +566,7 @@
   </div>
 </section>
 
+<!-- Modern Minimalist Dark Footer -->
 <footer>
   <p style="letter-spacing: 3px; color: #fff; font-size: 0.9rem; font-family: 'Cinzel', serif;">© 2026 WAHEED QASMI</p>
   <p style="font-size: 0.75rem; letter-spacing: 2px; color: #666;">MAULANA • GRADUATE OF DARUL ULOOM DEOBAND</p>
