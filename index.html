@@ -137,34 +137,41 @@
       60% { transform: translate(-50%, -5px); }
     }
 
-    /* ================= NAVIGATION BAR ================= */
+    /* ================= NAVIGATION BAR (FIXED FOR MOBILE) ================= */
     nav {
       position: sticky;
       top: 0;
-      background: rgba(var(--bg-secondary) == #ffffff ? "255,255,255" : "15,15,15", 0.8);
+      background: var(--bg-secondary);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      padding: 20px 0;
+      padding: 20px 15px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--border-color);
       z-index: 1000;
       transition: var(--transition);
     }
 
-    .nav-links { display: flex; align-items: center; }
+    .nav-links { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      flex-wrap: wrap; /* Allows tabs to drop beautifully to the next line on tiny screens */
+      width: 100%;
+      gap: 15px 25px;
+    }
 
     nav a {
-      margin: 0 20px;
       color: var(--text-main);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       transition: var(--transition);
       font-weight: 500;
       position: relative;
+      white-space: nowrap; /* Keeps link phrases together */
     }
 
     nav a::after {
@@ -188,7 +195,7 @@
       color: var(--text-main);
       cursor: pointer;
       font-size: 1.1rem;
-      margin-left: 20px;
+      padding: 5px;
       transition: var(--transition);
     }
     .theme-toggle:hover { color: var(--gold); transform: scale(1.1); }
@@ -376,8 +383,20 @@
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .section { padding: 90px 20px; }
-      nav { padding: 15px; }
-      nav a { margin: 0 10px; font-size: 0.75rem; }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-links {
+        gap: 10px 15px;
+      }
+      nav a {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+      }
     }
   </style>
 </head>
@@ -414,7 +433,6 @@
 <section class="section reveal" id="about">
   <div class="about-grid">
     <div class="about-image-frame">
-      <!-- High artistic contextual placeholder for an islamic artist workspace -->
       <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800" alt="Islamic Art Studio Background">
     </div>
     <div class="about-content">
