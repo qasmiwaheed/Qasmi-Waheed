@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waheed Qasmi | Professional Calligrapher & Tutor</title>
+
+  <meta name="description" content="Maulana Waheed Qasmi, Professional Calligrapher at the Abdullah bin Zaid Islamic Cultural Center (Qatar). Expert in classical Arabic scripts and Darul Uloom Deoband graduate.">
+  <meta name="keywords" content="Arabic Calligraphy, Qatar Calligrapher, Waheed Qasmi, Khattat, Islamic Art Tutor, Doha Calligraphy">
+
+  <!-- Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ================= DYNAMIC MODERN DESIGN SYSTEM ================= */
+    :root {
+      --gold: #d4af37; 
+      --gold-dark: #aa8416;
+      --bg-primary: #faf8f5;
+      --bg-secondary: #ffffff;
+      --text-main: #1a1a1a;
+      --text-muted: #5a5a5a;
+      --border-color: rgba(212, 175, 55, 0.15);
+      --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+      --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #121212;
+      --text-main: #f5f5f5;
+      --text-muted: #b0b0b0;
+      --border-color: rgba(212, 175, 55, 0.25);
+      --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    /* Custom Selection Color */
+    ::-selection { background: var(--gold); color: #fff; }
+
+    /* ================= SMOOTH REVEAL ANIMATION ================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: var(--transition);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= PREMIUM HERO SECTION ================= */
+    header {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)), 
+                  url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=2000');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+
+    .hero-container {
+      max-width: 900px;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      margin: 0;
+      color: var(--gold);
+      letter-spacing: 6px;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 7px;
+      font-weight: 300;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      margin-top: 15px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--gold);
+      background: rgba(214, 175, 55, 0.05);
+      border-radius: 50px;
+    }
+
+    /* Decorative Scroll Indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.5);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+      40% { transform: translate(-50%, -10px); }
+      60% { transform: translate(-50%, -5px); }
+    }
+
+    /* ================= NAVIGATION BAR ================= */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(var(--bg-secondary) == #ffffff ? "255,255,255" : "15,15,15", 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-links { display: flex; align-items: center; }
+
+    nav a {
+      margin: 0 20px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: var(--transition);
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--gold);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--gold); }
+
+    /* Theme Engine Switch Button */
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-main);
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-left: 20px;
+      transition: var(--transition);
+    }
+    .theme-toggle:hover { color: var(--gold); transform: scale(1.1); }
+
+    /* ================= SECTION STYLING ================= */
+    .section { padding: 140px 24px; max-width: 1200px; margin: auto; }
+
+    .section-title-wrapper { text-align: center; margin-bottom: 70px; }
+    .section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+    .section-subtitle {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--gold);
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* ================= ABOUT ARTIST ================= */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image-frame {
+      position: relative;
+      border: 1px solid var(--border-color);
+      padding: 15px;
+      background: var(--bg-secondary);
+    }
+
+    .about-image-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(20%);
+      transition: var(--transition);
+    }
+    .about-image-frame:hover img { filter: grayscale(0%); }
+
+    .about-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      margin-top: 0;
+      font-weight: 400;
+    }
+
+    .institution {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    /* ================= TEACHING SECTION ================= */
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .course-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    .course-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--gold);
+    }
+
+    .course-icon {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 25px;
+    }
+
+    .course-card h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      margin: 0 0 15px 0;
+      font-weight: 400;
+    }
+
+    /* ================= PREMIUM PORTFOLIO ================= */
+    .portfolio-bg { background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .insta-wrapper {
+      background: var(--bg-primary);
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+    .insta-wrapper:hover { transform: scale(1.02); }
+
+    /* ================= LUXURY BUTTONS ================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--gold);
+      color: var(--text-main);
+      padding: 16px 36px;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: var(--transition);
+      background: transparent;
+    }
+
+    .btn-solid {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(214, 175, 55, 0.15);
+    }
+
+    .btn-solid:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+
+    /* ================= BACK TO TOP ================= */
+    #backToTop {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        display: none;
+        background: var(--gold);
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2000;
+        transition: var(--transition);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    #backToTop:hover { background: var(--gold-dark); transform: scale(1.1); }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #0a0a0a;
+      color: #888;
+      text-align: center;
+      padding: 100px 20px;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(214, 175, 55, 0.1);
+    }
+
+    footer p { max-width: 600px; margin: 0 auto 15px; }
+
+    /* ================= RESPONSIVE ADJUSTMENTS ================= */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .section { padding: 90px 20px; }
+      nav { padding: 15px; }
+      nav a { margin: 0 10px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- Header Splash -->
+<header id="home">
+  <div class="hero-container">
+    <span class="hero-badge">Official Portfolio</span>
+    <h1>Waheed Qasmi</h1>
+    <div class="hero-subtitle">Maulana • Calligrapher • Master Tutor</div>
+    <p style="opacity: 0.7; font-size: 0.85rem; margin-top: 30px; letter-spacing: 4px; text-transform: uppercase;">Doha, Qatar</p>
+  </div>
+  <i class="fas fa-chevron-down scroll-down" onclick="document.getElementById('navbar').scrollIntoView();"></i>
+</header>
+
+<!-- Modern Sticky Navigation -->
+<nav id="navbar">
+  <div class="nav-links">
+    <a href="#about">The Artist</a>
+    <a href="#teaching">Classical Courses</a>
+    <a href="#work">Gallery</a>
+    <a href="#contact">Commissions</a>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+    <i class="fas fa-moon"></i>
+  </button>
+</nav>
+
+<!-- Clean Editorial About Section -->
+<section class="section reveal" id="about">
+  <div class="about-grid">
+    <div class="about-image-frame">
+      <!-- High artistic contextual placeholder for an islamic artist workspace -->
+      <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800" alt="Islamic Art Studio Background">
+    </div>
+    <div class="about-content">
+      <span class="institution">Abdullah bin Zaid Islamic Cultural Center</span>
+      <h3>The Art of the Sacred Pen</h3>
+      <p style="color: var(--text-muted); font-weight: 300; font-size: 1.05rem; margin-bottom: 30px;">
+        A graduate of the prestigious <strong>Darul Uloom Deoband</strong>, Maulana Waheed Qasmi beautifully bridges traditional Islamic scholarship with the aesthetic visual elegance of Arabic Calligraphy. 
+      </p>
+      <p style="color: var(--text-muted); font-weight: 300; font-size: 1.05rem; margin-bottom: 40px;">
+        With over 15 years of absolute creative dedication, his compositions transform classic parchment into windows of deep spiritual reflection.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+          <a href="https://wa.me/97466531911" class="btn btn-solid"><i class="fab fa-whatsapp"></i> Book Consultation</a>
+          <a href="#work" class="btn">View Gallery</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cards Grid Teaching Section -->
+<section class="section reveal" id="teaching">
+    <div class="section-title-wrapper">
+        <h2>Classical Training</h2>
+        <div class="section-subtitle">Preserving traditional frameworks</div>
+    </div>
+    
+    <div class="teaching-grid">
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-pen-fancy"></i></div>
+            <h4>1. The Foundation</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Mastering the anatomy of the hand-carved organic bamboo 'Qalam', learning paper preparation, and managing traditional ink consistency.</p>
+        </div>
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-compass"></i></div>
+            <h4>2. The Discipline</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Immersing into the absolute precision of the structural Nuqta (dot) measurement framework system across Thuluth, Naskh, and Diwani styles.</p>
+        </div>
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-scroll"></i></div>
+            <h4>3. Master Compositions</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Progressing into fluid complex geometric structural configurations, large scale wall layouts, and complex architectural integrations.</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+         <a href="https://wa.me/97466531911" class="btn btn-solid">Apply For Student Admission</a>
+    </div>
+</section>
+
+<!-- Gallery Showcase Section -->
+<div class="portfolio-bg">
+  <section class="section" id="work">
+    <div class="section-title-wrapper reveal">
+        <h2>Selected Masterpieces</h2>
+        <div class="section-subtitle">Portfolio Exhibition</div>
+    </div>
+
+    <div class="portfolio-grid reveal">
+      <div class="insta-wrapper">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYTUb7tPO9w/" data-instgrm-version="14" style="width:100%; margin:0;"></blockquote>
+      </div>
+      <div class="insta-wrapper">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CbDERTQv6LH/" data-instgrm-version="14" style="width:100%; margin:0;"></blockquote>
+      </div>
+      <div class="insta-wrapper">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYUoJvQB05A/" data-instgrm-version="14" style="width:100%; margin:0;"></blockquote>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="https://www.instagram.com/qasmiwaheed" target="_blank" class="btn"><i class="fab fa-instagram"></i> Follow Official Feed</a>
+    </div>
+  </section>
+</div>
+
+<!-- Premium Contact & Booking Interface -->
+<section class="section reveal" id="contact" style="text-align:center; max-width: 800px;">
+  <div class="section-title-wrapper">
+      <h2>Commissions & Inquiries</h2>
+      <div class="section-subtitle">Global Correspondence</div>
+  </div>
+  <p style="font-size: 1.1rem; font-weight: 300; color: var(--text-muted); margin-bottom: 40px;">
+    Open to luxury private commissions, architectural custom installations, international workshops, and elite private online/offline mentoring.
+  </p>
+  
+  <p style="letter-spacing: 2px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 40px;">
+    <i class="fas fa-map-marker-alt" style="color:var(--gold); margin-right: 10px;"></i> Resident in <strong>Doha, Qatar</strong>
+  </p>
+
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+      <a class="btn btn-solid" href="https://wa.me/97466531911"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a>
+      <a class="btn" href="https://www.facebook.com/qasmi.waheed" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+      <a class="btn" href="https://www.instagram.com/qasmiwaheed" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+</section>
+
+<!-- Modern Minimalist Dark Footer -->
+<footer>
+  <p style="letter-spacing: 3px; color: #fff; font-size: 0.9rem; font-family: 'Cinzel', serif;">© 2026 WAHEED QASMI</p>
+  <p style="font-size: 0.75rem; letter-spacing: 2px; color: #666;">MAULANA • GRADUATE OF DARUL ULOOM DEOBAND</p>
+  <p style="font-size: 0.75rem; color: var(--gold); margin-top: 25px; text-transform: uppercase; letter-spacing: 2px;">Abdullah bin Zaid Islamic Cultural Center, Qatar</p>
+</footer>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+<script>
+  // Dynamic Scroll Reveal Logic 
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 80;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+  window.addEventListener("scroll", reveal);
+  reveal();
+
+  // Smooth Back to Top Control Engine
+  const btt = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+      btt.style.display = "block";
+    } else {
+      btt.style.display = "none";
+    }
+  };
+  btt.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
+  // Luxury Theme Engine Light/Dark Switch Toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = themeToggle.querySelector('i');
+  
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+      document.documentElement.removeAttribute('data-theme');
+      themeIcon.className = 'fas fa-moon';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.className = 'fas fa-sun';
+    }
+  });
+</script>
+
+</body>
+</html>
