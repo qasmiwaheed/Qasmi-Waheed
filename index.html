@@ -64,15 +64,16 @@
       transform: translateY(0);
     }
 
-    /* ================= PREMIUM HERO SECTION (UPDATED WITH REAL FANAR PHOTO) ================= */
+    /* ================= PREMIUM HERO SECTION (FIXED DOHA NIGHT SKYLINE) ================= */
     header {
       position: relative;
       height: 100vh;
-      /* Background completely replaced with the real beautiful visual of Fanar Spiral Minaret in Doha */
-      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.8)), 
-                  url('https://images.unsplash.com/photo-1590012351474-32b0e0ee464e?auto=format&fit=crop&q=80&w=2000');
+      /* Dual fallback: Solid luxury dark gradient base + High-speed CDN beautiful Qatar Night Skyline image */
+      background: linear-gradient(rgba(12, 12, 15, 0.65), rgba(12, 12, 15, 0.85)), 
+                  url('https://images.unsplash.com/photo-1578895210405-907db486c111?auto=format&fit=crop&q=80&w=2000'),
+                  linear-gradient(to bottom, #111115, #1c1c22);
       background-size: cover;
-      background-position: center 30%;
+      background-position: center;
       background-attachment: fixed;
       display: flex;
       justify-content: center;
@@ -95,7 +96,7 @@
       letter-spacing: 6px;
       font-weight: 400;
       text-transform: uppercase;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
 
     .hero-subtitle {
@@ -106,6 +107,7 @@
       margin-top: 15px;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
     .hero-badge {
@@ -117,8 +119,10 @@
       text-transform: uppercase;
       margin-bottom: 20px;
       color: var(--gold);
-      background: rgba(214, 175, 55, 0.05);
+      background: rgba(214, 175, 55, 0.15);
       border-radius: 50px;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }
 
     /* Decorative Scroll Indicator */
@@ -127,10 +131,11 @@
       bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.6);
       font-size: 1.5rem;
       animation: bounce 2s infinite;
       cursor: pointer;
+      z-index: 2;
     }
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
@@ -240,10 +245,8 @@
       width: 100%;
       height: auto;
       display: block;
-      filter: grayscale(20%);
       transition: var(--transition);
     }
-    .about-image-frame:hover img { filter: grayscale(0%); }
 
     .about-content h3 {
       font-family: 'Cinzel', serif;
@@ -406,7 +409,7 @@
 
 <button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
-<!-- Header Splash with Real Fanar Center Background Image -->
+<!-- Header Splash with Fixed Qatar Night Skyline Background Image -->
 <header id="home">
   <div class="hero-container">
     <span class="hero-badge">Official Portfolio</span>
@@ -430,11 +433,12 @@
   </button>
 </nav>
 
-<!-- Clean Editorial About Section -->
+<!-- Clean Editorial About Section with Calligraphy Focused Asset -->
 <section class="section reveal" id="about">
   <div class="about-grid">
     <div class="about-image-frame">
-      <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800" alt="Islamic Art Studio Background">
+      <!-- High speed CDN image showing standard Arabic Calligraphy Tools -->
+      <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=800" alt="Arabic Calligraphy Artwork Process">
     </div>
     <div class="about-content">
       <span class="institution">Abdullah bin Zaid Islamic Cultural Center</span>
