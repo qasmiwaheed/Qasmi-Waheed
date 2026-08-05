@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAMIR FITNESS POINT | Siswa Munsi, Maharajganj</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-body: #0a0c10;
+            --bg-card: #131720;
+            --bg-card-hover: #1c2230;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-neon: rgba(255, 62, 62, 0.4);
+            
+            --primary: #ff3e3e;
+            --primary-glow: rgba(255, 62, 62, 0.35);
+            --accent-gold: #ffb703;
+            --accent-purple: #8a2be2;
+            
+            --text-main: #ffffff;
+            --text-sub: #a0a7b5;
+            --text-dim: #646d7e;
+            
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-body);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Ambient Glow Backgrounds */
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .glow-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 62, 62, 0.15);
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #ff3e3e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-text {
+            background: linear-gradient(135deg, #ffe259 0%, #ffa751 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Clean Header / Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 12, 16, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 68px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo-dot {
+            width: 7px;
+            height: 7px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-sub);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff3e3e 0%, #d62828 100%);
+            color: #fff;
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(255, 62, 62, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(220, 39, 67, 0.25);
+        }
+
+        .btn-insta:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(255, 62, 62, 0.1);
+            border: 1px solid rgba(255, 62, 62, 0.25);
+            border-radius: 30px;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero p.tagline {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p.desc {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            color: var(--text-sub);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 8px 18px;
+            border-radius: 20px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        /* Stats Bar */
+        .hero-stats {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .stat-item p {
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 16px;
+        }
+
+        .about-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 14px;
+            color: #fff;
+        }
+
+        .about-box p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .owner-card-pro {
+            background: linear-gradient(180deg, rgba(255, 62, 62, 0.08) 0%, var(--bg-card) 100%);
+            border: 1px solid var(--border-neon);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .owner-avatar-pro {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            box-shadow: 0 0 20px var(--primary-glow);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .owner-card-pro h3 {
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        .owner-card-pro .badge-owner {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .owner-card-pro p {
+            color: var(--text-sub);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Membership Plans */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .plan-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .plan-card:hover {
+            border-color: var(--border-neon);
+            transform: translateY(-4px);
+        }
+
+        .plan-card.popular {
+            border-color: var(--primary);
+            background: linear-gradient(180deg, rgba(255, 62, 62, 0.12) 0%, var(--bg-card) 100%);
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .plan-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .plan-price {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .plan-price span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        .plan-desc {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        /* Why Choose Us Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .feature-icon-pro {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: rgba(255, 62, 62, 0.12);
+            border: 1px solid rgba(255, 62, 62, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .feature-card h4 {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        /* Ready Photo Slots Gallery Grid */
+        .gallery-grid-pro {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-card-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-card-visual:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .gallery-image-box {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, rgba(255, 62, 62, 0.05) 0%, rgba(24, 27, 34, 1) 100%);
+            border-bottom: 1px dashed var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            gap: 8px;
+        }
+
+        .gallery-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-image-box .upload-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .gallery-image-box span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-sub);
+        }
+
+        .gallery-card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-card-body h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+
+        .gallery-card-body p {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 850px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-info-side h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .contact-actions-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0 24px;
+            background: #060709;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-sub);
+        }
+
+        footer .logo {
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        footer p.copyright {
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .about-grid, .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 50px 0 30px;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero p.tagline {
+                font-size: 1.05rem;
+            }
+
+            .contact-wrapper {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-1"></div>
+
+    <!-- Clean Header Navbar -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                JAMIR <span>FITNESS</span> <div class="logo-dot"></div>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#plans">Membership</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-pill">⚡ Premium Fitness Gym</div>
+            
+            <h1>Build Your Body <br><span class="gradient-text">Build Your Confidence</span></h1>
+            
+            <p class="tagline">Transform Your Physique • Elevate Your Lifestyle</p>
+            
+            <p class="desc">Train with modern equipment, professional coaching guidance, and a high-energy environment built to empower every member in Maharajganj.</p>
+            
+            <div class="hero-location">
+                📍 Siswa Munsi, Dist. Maharajganj
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Motivating Atmosphere</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="gold-text">₹499</h3>
+                    <p>Starting Monthly Fee</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="gold-text">₹2499</h3>
+                    <p>1-on-1 Personal Training</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About <span class="gradient-text">Jamir Fitness</span></h2>
+                <p>Dedicated to helping you achieve your ultimate health and fitness goals.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-box">
+                    <h3>Welcome to Jamir Fitness Point</h3>
+                    <p>Located in Siswa Munsi, Maharajganj, Jamir Fitness Point is designed to offer state-of-the-art strength training and conditioning facilities.</p>
+                    <p>Whether you want to build muscle, drop weight, or improve your athletic stamina, our gym offers high-grade equipment and dedicated guidance for every step of your fitness journey.</p>
+                </div>
+
+                <div class="owner-card-pro">
+                    <div class="owner-avatar-pro">🏋️‍♂️</div>
+                    <h3>Founder & Head Trainer</h3>
+                    <span class="badge-owner">Owner</span>
+                    <p>"Your transformation starts the moment you refuse to give up."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans Section -->
+    <section id="plans">
+        <div class="container">
+            <div class="section-header">
+                <h2>Membership <span class="gradient-text">Plans</span></h2>
+                <p>Flexible options designed for your lifestyle and fitness objectives.</p>
+            </div>
+
+            <div class="plans-grid">
+                <!-- Basic Plan -->
+                <div class="plan-card">
+                    <div class="plan-title">Monthly Pass</div>
+                    <div class="plan-price">₹499 <span>/month</span></div>
+                    <p class="plan-desc">Full access to gym equipment and cardio area for a single month.</p>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                </div>
+
+                <!-- Popular Plan -->
+                <div class="plan-card popular">
+                    <div class="popular-tag">Best Value</div>
+                    <div class="plan-title">Quarterly Pass</div>
+                    <div class="plan-price">₹1,299 <span>/3 months</span></div>
+                    <p class="plan-desc">Ideal for steady progress. Save more with a 3-month commitment.</p>
+                    <a href="#contact" class="btn btn-primary">Join Now</a>
+                </div>
+
+                <!-- Personal Training -->
+                <div class="plan-card">
+                    <div class="plan-title">1-on-1 PT</div>
+                    <div class="plan-price">₹2,499 <span>/month</span></div>
+                    <p class="plan-desc">Personalized coaching, customized workout routines, and diet plans.</p>
+                    <a href="#contact" class="btn btn-outline">Book Trainer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why <span class="gradient-text">Choose Us</span></h2>
+                <p>Everything you need for an effective and structured workout.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-pro">💪</div>
+                    <h4>Modern Equipment</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-pro">🎯</div>
+                    <h4>Personal Guidance</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-pro">🔥</div>
+                    <h4>High-Energy Vibe</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-pro">🤝</div>
+                    <h4>Supportive Community</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gym <span class="gradient-text">Gallery</span></h2>
+                <p>Take a glance at our training space and equipment.</p>
+            </div>
+
+            <div class="gallery-grid-pro">
+                <div class="gallery-card-visual">
+                    <div class="gallery-image-box">
+                        <span class="upload-icon">🏋️</span>
+                        <span>Free Weights Section</span>
+                    </div>
+                    <div class="gallery-card-body">
+                        <h4>Dumbbells & Barbells</h4>
+                        <p>Complete set for heavy lifting</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card-visual">
+                    <div class="gallery-image-box">
+                        <span class="upload-icon">🚴</span>
+                        <span>Cardio Zone</span>
+                    </div>
+                    <div class="gallery-card-body">
+                        <h4>Stamina Training</h4>
+                        <p>Treadmills and cycle trainers</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card-visual">
+                    <div class="gallery-image-box">
+                        <span class="upload-icon">⚙️</span>
+                        <span>Strength Machines</span>
+                    </div>
+                    <div class="gallery-card-body">
+                        <h4>Targeted Isolation</h4>
+                        <p>Guided movement systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info-side">
+                    <h3>Visit <span class="gradient-text">Us</span></h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <label>Location</label>
+                            <p>Siswa Munsi, Maharajganj, Uttar Pradesh</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-text">
+                            <label>Hours</label>
+                            <p>Morning: 5:00 AM - 9:00 AM<br>Evening: 4:00 PM - 9:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-actions-side">
+                    <a href="https://wa.me/" class="btn btn-whatsapp" target="_blank">
+                        💬 Connect on WhatsApp
+                    </a>
+                    <a href="https://instagram.com/" class="btn btn-insta" target="_blank">
+                        📸 Follow on Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                JAMIR <span>FITNESS</span> <div class="logo-dot"></div>
+            </div>
+            <p>Siswa Munsi, Maharajganj</p>
+            <p class="copyright">&copy; 2026 Jamir Fitness Point. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
